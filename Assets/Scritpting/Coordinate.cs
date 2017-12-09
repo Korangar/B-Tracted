@@ -6,7 +6,7 @@ public class Coordinate {
 
     public static readonly float WIDTH_MULTIPLIER = Mathf.Sqrt(3) / 2;
 
-    public static float size = 1.01f;
+    public static float size = 1f;
 
     public static Vector3 Axial2Cube(Vector2 axial)
     {
@@ -41,19 +41,24 @@ public class Coordinate {
 
     public static Vector3 Offset2Real(Vector2 off)
     {
-        float height = size * 2;
-        float width = height * WIDTH_MULTIPLIER;
-
-        float vert = height * 0.75f;
-        float horiz = width;
-
         Vector3 real = new Vector3(
-            horiz * (off.x + ((int)off.y & 1) / 2f),
+            Mathf.Sqrt(3.0f) * (off.x + 0.5f * ((int) off.y & 1)),
             0,
-            vert * off.y
+            3.0f / 2.0f * off.y
         );
 
-        return real;
+        return real * size;
+    }
+
+    public static Vector3 Axial2Real(Vector2 axial)
+    {
+         Vector3 real = new Vector3(
+            Mathf.Sqrt(3.0f) * (axial.x + axial.y / 2.0f),
+            0,
+            3.0f / 2.0f * axial.y
+        );
+
+        return real * size;
     }
 
     public static Vector3 Cube2Real(Vector3 cube)
@@ -68,16 +73,16 @@ public class Coordinate {
         return trans * cube;
     }
 
-    public static Vector2 Real2Offset(Vector2 real)
+    public static Vector2 Real2Axial(Vector2 real)
     {
-        Vector2 off = new Vector2();
-        off.x = (real.x * Mathf.Sqrt(3) / 3 - real.y / 3) / size;
-        off.y = real.y * 2 / 3 / size;
-        return off;
+        Vector2 axial = new Vector2();
+        axial.x = (real.x * Mathf.Sqrt(3.0f) / 3.0f - real.y / 3.0f) / size;
+        axial.y = real.y * 2.0f / 3.0f / size;
+        return axial;
     }
     public static Vector3 RoundReal2Cube(Vector2 real)
     {
-        return RoundCube(Offset2Cube(Real2Offset(real)));
+        return RoundCube(Axial2Cube(Real2Axial(real)));
     }
 
     public static Vector3 RoundCube(Vector3 cube)

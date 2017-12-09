@@ -126,7 +126,7 @@ public class PlayerBehaviour : MonoBehaviour {
 				v_in = Input.GetAxis(myInput.vertical);
 				h_in = Input.GetAxis(myInput.horizontal);
 			}
-            Vector2 dir = new Vector2(h_in, -v_in);
+            Vector2 dir = new Vector2(h_in, v_in);
             dir *= Coordinate.size;
             transform.Translate(Coordinate.Cube2Real(Coordinate.RoundReal2Cube(dir)));
         }
