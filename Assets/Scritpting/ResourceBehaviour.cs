@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum ResourceType
 {
+    //Placeholdertypes
     RED,        
     YELLOW,         
     BLUE,
@@ -13,17 +12,24 @@ public enum ResourceType
 public class ResourceBehaviour : BuildingBaseBehaviour {
 
     public ResourceType type;
-    private static int maxHealthpoints = 1000;
 
     private void Start()
     {
-        healthpoints = maxHealthpoints;
-
-        // Setting Layer for GatheringBuilding findResources-method
         gameObject.layer = LayerMask.NameToLayer("Resource");
     }
 
-    public void OnDepleated(){
-        
+    public void depleatResource()
+    {
+        TakeDamage();
+    }
+
+    public void delpeatResource(int depleted)
+    {
+        TakeDamage(depleted);
+    }
+
+    public override void OnDeath()
+    {
+        Destroy(gameObject);
     }
 }

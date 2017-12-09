@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using System.Threading;
 
 public class BarracksBehaviour : BuildingBaseBehaviour {
 
@@ -9,28 +8,22 @@ public class BarracksBehaviour : BuildingBaseBehaviour {
     private static int maxBees = 10;
     private static float requestDelay = 1f;
     private static float trainDelay = 5f;
-    private static int maxHealth = 1000;
 
     void Start(){
-        healthpoints = maxHealth;
-        // StartCoroutine RequestBees
     }
 
     private void Update()
     {
         if (healthpoints <= 0)
-            OnDefeat();
-
-
-        // if request bees finished, and not training
-            // StartCoroutine TrainBees
+            OnDeath();
+        
     }
 
     private IEnumerator RequestBees(){
         int i = 0;
 
         while(i < maxBees){
-            // REQUEST BEES
+            RequestBee();
             i++;
             yield return new WaitForSeconds(requestDelay);
         }
@@ -38,20 +31,32 @@ public class BarracksBehaviour : BuildingBaseBehaviour {
 
     private IEnumerator TrainBees(){
         int i = 0;
-        int bees = 0 /*number of current bees here*/; 
+        int bees = 0; 
 
         while(i < bees){
-            //trainBeeAtIndex(i);
+            TrainBee();
             i++;
             yield return new WaitForSeconds(trainDelay);
         }
     }
 
-    public void onBeeDeath(){
+    public void RequestBee(){
+        // Request Bee here
+    }
+
+    public void TrainBee(){
+        /**
+         * 
+         * Circling untrained bee is changed to trained state
+         * 
+        */
+    }
+
+    public void OnBeeDeath(){
        // Request new bee
     }
 
-    public void onBeeTrained(){
+    public void OnBeeTrained(){
         // Spawn trained bee
     }
 
@@ -59,9 +64,7 @@ public class BarracksBehaviour : BuildingBaseBehaviour {
         targetTile = tile;   
     }
 
-    public void OnDefeat(){
-
-        // StopCoroutine(RequestBees());
-        // StopCoroutine(TrainBees());
+    public override void OnDeath(){
+        
     }
 }

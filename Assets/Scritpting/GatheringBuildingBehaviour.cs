@@ -1,12 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Security.Cryptography.X509Certificates;
 
 public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
     
     private GameObject[] resources;
-    private static int maxHealthpoints = 1000;
     private static int maxBees = 5;
     private static float requestDelay = 1f;
     private static float scanRadius = 20f;
@@ -16,13 +13,17 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
         resources = FindResources(scanRadius);
     }
 
+    private void Update()
+    {
+        
+    }
+
     private IEnumerator RequestBees()
     {
         int i = 0;
 
         while (i < maxBees)
         {
-            // REQUEST BEES
             i++;
             yield return new WaitForSeconds(requestDelay);
         }
@@ -39,7 +40,12 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
         return result;
     }
 
-    public void OnDefeat(){
+    public void OnResourceDepleated(){
         
+    }
+
+    public override void OnDeath()
+    {
+        Destroy(gameObject);
     }
 }
