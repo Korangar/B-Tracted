@@ -5,43 +5,87 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public static Vector3 move_v = new Vector3(0,0,1);
-	public static Vector3 move_h = new Vector3(1,0,0);
-	public static float moveDelay_s = 0.2f;
+	public static Vector3 move_v = new Vector3(0.8660254f, 0, 1.5f);
+	public static Vector3 move_h = new Vector3(1.732051f, 0, 0);
+	public static float moveDelay_s = 0.3f;
 	public static float deadzone = 0.9f;
-
-
 	public int resource = 100;
-	private InputBatch myInput; 
+	public InputBatch myInput;
+	public PlayerMenuManager playerMenu;
+	public TileBehaviour selectedTile;
+
+	public List<BuildingBaseBehaviour> buildings = new List<BuildingBaseBehaviour>();
+
+	public TileBehaviour SelectedTile{
+		get{
+			return selectedTile;
+		}
+		set{
+			selectedTile = value;
+		}
+	}
 
 	void Start()
 	{
-		myInput = GetComponent<InputBatch>();
-		StartCoroutine(SelectorMovement());
+		if(myInput == null){
+			myInput = GetComponent<InputBatch>();
+		}
+		if(playerMenu == null){
+			playerMenu = GetComponentInChildren<PlayerMenuManager>();
+		}
+		StartCoroutine("SelectorMovement");
+		StartCoroutine("SelectorMapControll");
 	}
 
-	void Update()
-	{
-						
-		float v_abs = Mathf.Abs(Input.GetAxis(myInput.vertical));
-		float h_abs = Mathf.Abs(Input.GetAxis(myInput.horizontal));
+	public void AttackAtSelection(){
+		foreach(var e in buildings){
+			bool isbarr = true;
+			if(isbarr){
+				// TODO set target for attack
+				Debug.Log("Attack "+ selectedTile.name);
+			}
+		}
+	}
 
-		if(v_abs > h_abs)
-			{
-				float sign = Mathf.Sign(Input.GetAxis(myInput.vertical));
-				Debug.DrawRay(transform.position, move_v*sign);
+	private IEnumerator SelectorMapControll(){
+		bool menuOpen = false;
+		while(true){
+			if(Input.GetButtonDown(myInput.accept)){
+				//TODO select a tile and decide what you can do with it.
+				//delegate input to the menu
+				if(menuOpen){
+					playerMenu.actions[playerMenu.selector]();
+				}
+				else{
+					StopCoroutine("SelectorMovement");
+					menuOpen = playerMenu.OnMenuOpen(selectedTile);
+				}
 			}
-			else
-			{
-				float sign = Mathf.Sign(Input.GetAxis(myInput.horizontal));
-				Debug.DrawRay(transform.position, move_h*sign);
+			if(Input.GetButtonDown(myInput.cancel)){
+				//TODO select a tile and decide what you can do with it.
+				//delegate input to the menu
+				if(menuOpen){
+					playerMenu.StopAllCoroutines();
+					menuOpen = false;
+				}
+				
 			}
+			yield return null;
+		}
 	}
 
 	private IEnumerator SelectorMovement()
 	{
 		while(true)
 		{
+			RaycastHit info;
+			if(Physics.Raycast(transform.position, Vector3.down, out info, 0.5f, 1<<9)){
+				selectedTile = info.collider.GetComponent<TileBehaviour>();
+			}
+			
+			yield return new WaitForSeconds(moveDelay_s);
+
+			// Move Selector
 			float v_in = 0f;
 			float h_in = 0f;
 			while(Mathf.Abs(v_in) < deadzone && Mathf.Abs(h_in) < deadzone) 
@@ -49,8 +93,7 @@ public class PlayerBehaviour : MonoBehaviour {
 				yield return null;
 				v_in = Input.GetAxis(myInput.vertical);
 				h_in = Input.GetAxis(myInput.horizontal);
-			}
-			
+			}	
 			if(Mathf.Abs(v_in) >= Mathf.Abs(h_in))
 			{
 				transform.Translate(move_v*Mathf.Sign(v_in));
@@ -59,8 +102,6 @@ public class PlayerBehaviour : MonoBehaviour {
 			{
 				transform.Translate(move_h*Mathf.Sign(h_in));
 			}
-			yield return new WaitForSeconds(moveDelay_s);
 		}
 	} 
-
 }
