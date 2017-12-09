@@ -5,4 +5,5 @@ using UnityEngine;
 public class TileBehaviour : MonoBehaviour {
 
 	public BuildingBaseBehaviour building;
+
 }

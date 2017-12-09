@@ -1,9 +1,5 @@
 ﻿using UnityEngine;
 
-
-
-
-
 public class BuildingBaseBehaviour : MonoBehaviour {
 
     public PlayerBehaviour owner;
@@ -12,8 +8,8 @@ public class BuildingBaseBehaviour : MonoBehaviour {
 	public static Vector3 location;
 
 	public void SetOwner(PlayerBehaviour owner){
-			this.owner = owner;
-		}
+        this.owner = owner;
+    }
 
 
     public void TakeDamage()
@@ -37,7 +33,6 @@ public class BuildingBaseBehaviour : MonoBehaviour {
 
     public virtual void OnDeath(){
         StopAllCoroutines();
-
         Destroy(gameObject);
     }
 
