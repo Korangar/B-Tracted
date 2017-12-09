@@ -60,8 +60,10 @@ public class HexMapInspector : Editor
                             DestroyImmediate(tile.GetComponent<TileBehaviour>().building.gameObject);
                         }
                     }
-                    if (((HexMap)target).building != null)
+                    if (((HexMap)target).building != null) {
                         tile.GetComponent<TileBehaviour>().building = Instantiate(((HexMap)target).building, tile.transform.position, Quaternion.identity).GetComponent<BuildingBaseBehaviour>();
+                        tile.GetComponent<TileBehaviour>().building.SetOwner(((HexMap)target).owner);
+                    }
                 }
 
             }
