@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeadQuartersBehaviour : BuildingBaseBehaviour {
-	 
-	public GameObject unit;
-	public List<GameObject> currentUnits = new List<GameObject>();
-
 	public void Start(){
-		SetHealthAndMax(10);
+		SetHealthAndMax(50);
 	}
 
 	public void Update(){
@@ -17,8 +13,12 @@ public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 		}
 	}
 
-	public void createUnit(){
-		currentUnits.Add ((GameObject)GameObject.Instantiate (unit, location, Quaternion.identity));
+	public override void Arrive(BeeBehaviour bee){
+		if(bee.hasPollen!=null){
+			owner.resource += 10;
+			bee.GoTo(bee.hasPollen);
+			bee.hasPollen = null;
+		}
 	}
 
 }

@@ -3,6 +3,7 @@
 public class BuildingBaseBehaviour : MonoBehaviour {
 
     public PlayerBehaviour owner;
+    public int cost;
     public int healthpoints = 0;
     public int maxHealthpoints = 10;
 	public static Vector3 location;

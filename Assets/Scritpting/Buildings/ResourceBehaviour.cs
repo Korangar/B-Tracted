@@ -27,10 +27,9 @@ public class ResourceBehaviour : BuildingBaseBehaviour {
         TakeDamage(depleted);
     }
 
-    public void OnResourceDepleted(){
-
+    public void OnResourceDepleted()
+    {
         EventHandler handler = ResourceDepleted;
-
         if(handler != null){
             if(healthpoints <= 0){
                 handler(this, EventArgs.Empty);
@@ -40,5 +39,10 @@ public class ResourceBehaviour : BuildingBaseBehaviour {
 
     private void SetLayerMask(String mask){
         gameObject.layer = LayerMask.NameToLayer(mask);
+    }
+
+    public override void Arrive(BeeBehaviour bee){
+        bee.hasPollen=this;
+        bee.GoTo(owner.headQuarters);
     }
 }

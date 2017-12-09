@@ -8,6 +8,7 @@ public class BeeBehaviour : MonoBehaviour
     public PlayerBehaviour owner;
     public int hp = 100;
     public int DMG = 5;
+    public ResourceBehaviour hasPollen = null;
     private float arrival_proximity = 0.75f;
     private float arrival_proximity_attack = 0.75f;
     private NavMeshAgent agent;
