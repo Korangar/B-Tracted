@@ -2,15 +2,18 @@
 using UnityEngine;
 using System;
 
-public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
+public class GatheringBuildingBehaviour : RequestingBaseBuildingBehaviour {
     
     private GameObject[] resources;
-    private static int maxBees = 5;
-    private static float requestDelay = 1f;
+   
     private static float scanRadius = 20f;
 
     void Start(){
-        healthpoints = maxHealthpoints;
+        SetHealthAndMax(10);
+        SetNumberOfBees(5);
+        SetRequestDelay(2f);
+        StartCoroutine("RequestBees");
+
         resources = FindResources(scanRadius);
     }
 
@@ -21,23 +24,6 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
         }
     }
 
-    private IEnumerator RequestBees()
-    {
-        int i = 0;
-
-        while (i < maxBees)
-        {
-            i++;
-            yield return new WaitForSeconds(requestDelay);
-        }
-    }
-
-    /**
-     * 
-     * Get all GameObjects of Resouce-Type in radius, 
-     * and subscribe to ResourceDepleted Event
-     * 
-     */
     private GameObject[] FindResources(float radius){
         // Get all colliders on resource layer in vicinity
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, LayerMask.NameToLayer("Resource"));

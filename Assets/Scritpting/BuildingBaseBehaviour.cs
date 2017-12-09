@@ -1,23 +1,11 @@
 ﻿using UnityEngine;
 
-<<<<<<< HEAD
+
 public class BuildingBaseBehaviour : MonoBehaviour {
-	public PlayerBehaviour owner;
-	public int healthpoints = 0;
-	public static Vector3 location;
-	public static void requestUnit(){
-//		owner.sendUnit (location);
-	}
-=======
-public class BuildingBaseBehaviour : MonoBehaviour
-{
+
     public PlayerBehaviour owner;
     public int healthpoints = 0;
-    public int maxHealthpoints = 1000;
-
-    public void SetOwner(PlayerBehaviour owner){
-        this.owner = owner;
-    }
+    public int maxHealthpoints = 10;
 
     public void TakeDamage()
     {
@@ -40,7 +28,6 @@ public class BuildingBaseBehaviour : MonoBehaviour
 
     public virtual void OnDeath(){
         StopAllCoroutines();
-        Destroy(gameObject);
-    }
->>>>>>> 007a5472908fc5c7f41c59bfd668336998eb56f9
+            Destroy(gameObject);
+        }
 }
