@@ -13,7 +13,9 @@ ModelImporter:
     400006: Rose
     2000000: Camera
     2300000: Rose
+    2300002: //RootNode
     3300000: Rose
+    3300002: //RootNode
     4300000: Rose
     9500000: //RootNode
     10800000: Lamp
@@ -33,6 +35,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Yellow.003
     second: {fileID: 2100000, guid: 6efb7ba7573d51940b21b0e9315f9dd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.005
+    second: {fileID: 2100000, guid: c9ff69170d845af4399ab3c943d5d852, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -62,7 +69,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 10
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

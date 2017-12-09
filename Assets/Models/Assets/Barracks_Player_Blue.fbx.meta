@@ -29,8 +29,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Blue.001
+    second: {fileID: 2100000, guid: a90d441ea9d5b084197a64015621f6af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Yellow
     second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.002
+    second: {fileID: 2100000, guid: 50eaeabd5b384e84e8b94b142c47c9b7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -60,7 +70,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
