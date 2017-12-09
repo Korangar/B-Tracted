@@ -17,6 +17,9 @@ public class HexMap : MonoBehaviour {
 	{	
 		TileBehaviour[] tiles = transform.GetComponentsInChildren<TileBehaviour>();
 		for(int i = 1; i < tiles.Length; i++){
+			if(tiles[i].building != null)
+				DestroyImmediate(tiles[i].building.gameObject);
+
 			DestroyImmediate(tiles[i].gameObject);
 		}
 
