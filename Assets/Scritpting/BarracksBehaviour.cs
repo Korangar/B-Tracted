@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Threading;
 
-public class BarracksBehaviour : BuildingBaseBehaviour
+public class BarracksBehaviour : RequestingBaseBuildingBehaviour
 {
 
     TileBehaviour targetTile = null;
 
-    private static int maxBees = 10;
-    private static float requestDelay = 1f;
     private static float trainDelay = 5f;
-    private List<Object> beeList = new List<Object>();
+
 
     void Start()
     {
+        SetHealthAndMax(10);
+        SetNumberOfBees(5);
+        SetRequestDelay(2f);
         StartCoroutine("RequestBees");
     }
 
@@ -26,19 +28,9 @@ public class BarracksBehaviour : BuildingBaseBehaviour
         {
             StartCoroutine("RequestBees");
         }
-        if(containsNotTrained(beeList)){
-            StartCoroutine("TrainBees");
-        }
-    }
-    private IEnumerator RequestBees()
-    {
-        int i = 0;
-
-        while (beeList.Count < maxBees)
+        if(containsNotTrained(beeList))
         {
-            beeList.Add(RequestBee());
-            i++;
-            yield return new WaitForSeconds(requestDelay);
+            StartCoroutine("TrainBees");
         }
     }
 
@@ -62,15 +54,7 @@ public class BarracksBehaviour : BuildingBaseBehaviour
         }
     }
 
-    public Object RequestBee()
-    {
-        /*
-         * Request bee and return refererence
-         */
-        return null;
-    }
-
-    public void TrainBee(Object bee)
+    public void TrainBee(Bee bee)
     {
         /**
          * 
@@ -79,17 +63,12 @@ public class BarracksBehaviour : BuildingBaseBehaviour
         */
     }
 
-    public void OnBeeDeath(object sender, System.EventArgs args)
-    {
-        StartCoroutine("RequestBees");
-    }
-
     public void Attack(TileBehaviour tile)
     {
         targetTile = tile;
     }
 
-    public bool containsNotTrained(List<Object> list){
+    public bool containsNotTrained(List<Bee> list){
 
         for (int i = 0; i < list.Count; i++){
             if( false

@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 
-public class BuildingBaseBehaviour : MonoBehaviour
-{
+
+
+
+
+public class BuildingBaseBehaviour : MonoBehaviour {
+
     public PlayerBehaviour owner;
     public int healthpoints = 0;
-    public int maxHealthpoints = 1000;
+    public int maxHealthpoints = 10;
 	public static Vector3 location;
 
-    public void SetOwner(PlayerBehaviour owner){
-        this.owner = owner;
-    }
+	public void SetOwner(PlayerBehaviour owner){
+			this.owner = owner;
+		}
+
 
     public void TakeDamage()
     {
@@ -32,7 +37,10 @@ public class BuildingBaseBehaviour : MonoBehaviour
 
     public virtual void OnDeath(){
         StopAllCoroutines();
+
         Destroy(gameObject);
     }
+
+
 
 }
