@@ -104,7 +104,7 @@ public class PlayerMenuManager : MonoBehaviour {
 				yield return null;
 				v_in = Input.GetAxis(playerBehaviour.myInput.vertical);
 			}
-			int s = 3 + Selector - (int) Mathf.Sign(v_in);
+			int s = 3 + Selector + (int) Mathf.Sign(v_in);
 			Selector = s % selectrange_max;
 		}
 	}

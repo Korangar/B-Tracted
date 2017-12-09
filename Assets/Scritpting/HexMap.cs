@@ -7,7 +7,9 @@ public class HexMap : MonoBehaviour {
 	static readonly float WIDTH_MULTIPLIER = Mathf.Sqrt (3) / 2;
 
 	public GameObject hexagon;
+	
 	public GameObject building;
+	public PlayerBehaviour owner;
 
 
 	public int NumColumns = 20;

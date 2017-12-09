@@ -9,6 +9,7 @@ public class MainStash : BuildingBaseBehaviour {
 
 	public void Start(){
 		SetHealthAndMax(10);
+		transform.GetChild(0).GetComponent<MeshRenderer>().materials[0].color = owner.transform.GetChild(0).GetComponent<SpriteRenderer>().color;
 	}
 
 	public void Update(){

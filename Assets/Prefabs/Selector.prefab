@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1015682808834738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.9974856, y: 0, z: -6.0600004}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4401653008668970}
@@ -362,9 +362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b1fe336cefaa419b3d263c99b497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherer: {fileID: 114653158585646392, guid: 35b20338f4e65ef4d88972926d9930f5, type: 2}
-  barracks: {fileID: 0}
-  watchtower: {fileID: 0}
+  gatherer: {fileID: 114920383067896398, guid: 22f41ee09fec14953b228b1dbcf0cfbf, type: 2}
+  barracks: {fileID: 114693637124846290, guid: f842383d1747047e08629aec7f8c969a, type: 2}
+  watchtower: {fileID: 114981055052712960, guid: f0ee9ca01c86a4ebea787b92806c827d,
+    type: 2}
   selector_obj: {fileID: 1402032025875046}
   entries:
   - {fileID: 114869135579049910}
