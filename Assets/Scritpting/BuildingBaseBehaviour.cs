@@ -11,7 +11,6 @@ public class BuildingBaseBehaviour : MonoBehaviour {
         this.owner = owner;
     }
 
-
     public void TakeDamage()
     {
         healthpoints--;

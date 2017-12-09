@@ -1,31 +1,38 @@
 fileFormatVersion: 2
 guid: 2f681b1320d714072bc93583b38a2dd8
-timeCreated: 1512823344
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: Camera
+    100002: //RootNode
+    100004: Lamp
+    100006: Rose
+    400000: Camera
+    400002: //RootNode
+    400004: Lamp
+    400006: Rose
+    2000000: Camera
+    2300000: Rose
+    3300000: Rose
     4300000: Rose
+    9500000: //RootNode
+    10800000: Lamp
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Green
-    second: {fileID: 2100000, guid: 785286d9022b24130ad2456bc6c142ec, type: 2}
+      name: Green.001
+    second: {fileID: 2100000, guid: a13252c4567f0ad41925907ea0178303, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LightRed
-    second: {fileID: 2100000, guid: 72ad7aa5c820241e6b3afbd4c4570f97, type: 2}
+    second: {fileID: 2100000, guid: 771cf5ebbadc21543ab01b249195d5fb, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Yellow
-    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
+      name: Yellow.003
+    second: {fileID: 2100000, guid: 6efb7ba7573d51940b21b0e9315f9dd0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -97,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

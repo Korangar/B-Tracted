@@ -8,7 +8,7 @@ public class RequestingBaseBuildingBehaviour : BuildingBaseBehaviour
     {
     public int nmbrOfBees;
     public float requestDelay;
-    public List<Bee> beeList = new List<Bee>();
+    public List<BeeBehaviour> beeList = new List<BeeBehaviour>();
 
     private IEnumerator RequestBees()
     {
@@ -22,7 +22,7 @@ public class RequestingBaseBuildingBehaviour : BuildingBaseBehaviour
         }
     }
 
-    public Bee RequestBee()
+    public BeeBehaviour RequestBee()
     {
         /*
          * Request bee and return refererence
