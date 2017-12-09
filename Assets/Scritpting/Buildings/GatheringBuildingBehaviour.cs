@@ -1,49 +1,55 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
 
 public class GatheringBuildingBehaviour : RequestingBaseBuildingBehaviour {
     
-    private GameObject[] resources;
+    private ResourceBehaviour[] resources;
+    private BeeBehaviour[] bees;
    
-    private static float scanRadius = 20f;
+    private static float scanRadius = 5f;
 
     void Start(){
         SetHealthAndMax(10);
         SetNumberOfBees(5);
         SetRequestDelay(2f);
-        StartCoroutine("RequestBees");
-
-        resources = FindResources(scanRadius);
+        FindResources(scanRadius);
     }
 
-    private void Update()
-    {
-        if(resources.Length==0){
-            OnDeath();
-        }
+    private void HireBee(int i){
+        BeeBehaviour temp = owner.RequestWorker(resources[i]);
+        temp.OnDeath += OnWorkerDeath;
     }
 
-    private GameObject[] FindResources(float radius){
+    private void FindResources(float radius){
         // Get all colliders on resource layer in vicinity
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, LayerMask.NameToLayer("Resource"));
-
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, 1<<LayerMask.NameToLayer("Resources"));
+        Debug.Log(colliders.Length);
+        Debug.DrawRay(transform.position, Vector3.right*radius, Color.red, 20f);
         // Get gameobjects of colliderss 
-        GameObject[] result = new GameObject[colliders.Length];
+        resources = new ResourceBehaviour[colliders.Length];
+        bees = new BeeBehaviour[colliders.Length];
 
         for (int i = 0; i < colliders.Length; i++)
         {
-            result[i] = colliders[i].gameObject;
-
+            resources[i] = colliders[i].gameObject.GetComponent<ResourceBehaviour>();
             // Subscribe to ResourceDepleted Event
-            ResourceBehaviour resBeh = result[i].GetComponent<ResourceBehaviour>();
-            resBeh.ResourceDepleted += new EventHandler(OnResourceDepleated);
+            if(bees[i]==null)
+            {
+                HireBee(i);
+            }
         }
-
-        return result;
     }
 
-    public void OnResourceDepleated(object sender, System.EventArgs args){
-        resources = FindResources(scanRadius);
+    public void OnWorkerDeath(BeeBehaviour bee)
+    {
+        for (int i = 0; i < bees.Length; i++)
+        {
+            if(bees[i]==bee)
+            {
+                HireBee(i);
+            }
+            
+        }
     }
 }

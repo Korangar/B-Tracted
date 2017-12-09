@@ -11,7 +11,7 @@ public class BeeBehaviour : MonoBehaviour
     public ResourceBehaviour hasPollen = null;
     private float arrival_proximity = 0.75f;
     private float arrival_proximity_attack = 0.75f;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public event System.Action<BeeBehaviour> OnDeath;
 
@@ -25,12 +25,6 @@ public class BeeBehaviour : MonoBehaviour
                 UnitDeath();
             }
         }
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
     }
 
 	public void GoTo(BuildingBaseBehaviour building)
