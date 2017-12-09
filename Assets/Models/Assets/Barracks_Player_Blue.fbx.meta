@@ -6,10 +6,20 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Barracks_Player_Blue
+    100004: Camera
+    100006: Lamp
     400000: //RootNode
+    400002: Barracks_Player_Blue
+    400004: Camera
+    400006: Lamp
+    2000000: Camera
     2300000: //RootNode
+    2300002: Barracks_Player_Blue
     3300000: //RootNode
+    3300002: Barracks_Player_Blue
     4300000: Barracks_Player_Blue
+    10800000: Lamp
   externalObjects:
   - first:
       type: UnityEngine:Material

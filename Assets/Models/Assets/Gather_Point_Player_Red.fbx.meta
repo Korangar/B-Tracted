@@ -9,15 +9,21 @@ ModelImporter:
     100002: //RootNode
     100004: Lamp
     100006: Torus.002
+    100008: Camera.001
+    100010: Lamp.001
     400000: Camera
     400002: //RootNode
     400004: Lamp
     400006: Torus.002
+    400008: Camera.001
+    400010: Lamp.001
     2000000: Camera
+    2000002: Camera.001
     2300000: Torus.002
     3300000: Torus.002
     4300000: Torus.002
     10800000: Lamp
+    10800002: Lamp.001
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -27,8 +33,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Red.001
+    second: {fileID: 2100000, guid: e1494e6fb5ac9fd449539c5c45ef351e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Yellow
     second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.005
+    second: {fileID: 2100000, guid: c9ff69170d845af4399ab3c943d5d852, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -6,10 +6,20 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Lamp
+    100006: Torus.002
     400000: //RootNode
+    400002: Camera
+    400004: Lamp
+    400006: Torus.002
+    2000000: Camera
     2300000: //RootNode
+    2300002: Torus.002
     3300000: //RootNode
+    3300002: Torus.002
     4300000: Torus.002
+    10800000: Lamp
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -19,8 +29,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Blue.001
+    second: {fileID: 2100000, guid: a90d441ea9d5b084197a64015621f6af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Yellow
     second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.004
+    second: {fileID: 2100000, guid: e01f28682c9960044a1f0e0850fe2cf5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

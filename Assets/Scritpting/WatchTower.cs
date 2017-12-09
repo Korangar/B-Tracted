@@ -5,7 +5,7 @@ using UnityEngine;
 public class WatchTower : BuildingBaseBehaviour {
 
 	public List<GameObject> unitsWithinRange = new List<GameObject>(); 
-	public int attackRate = 0.5; //attacks per second
+	public double attackRate = 0.5; //attacks per second
 	private bool AttackRunning = false;
 
 	public void Start(){
