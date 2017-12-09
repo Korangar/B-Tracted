@@ -1,29 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
 
 public enum ResourceType
 {
-    RED,        
-    YELLOW,         
+    RED,         
     BLUE,
-
 };
 
 public class ResourceBehaviour : BuildingBaseBehaviour {
 
     public ResourceType type;
-    private static int maxHealthpoints = 1000;
+    public event EventHandler ResourceDepleted;
 
     private void Start()
     {
-        healthpoints = maxHealthpoints;
-
-        // Setting Layer for GatheringBuilding findResources-method
-        gameObject.layer = LayerMask.NameToLayer("Resource");
+        SetLayerMask("Resource");
     }
 
-    public void OnDepleated(){
-        
+    public void DepleatResource()
+    {
+        TakeDamage();
+    }
+
+    public void DepleatResource(int depleted)
+    {
+        TakeDamage(depleted);
+    }
+
+    public void OnResourceDepleted(){
+
+        EventHandler handler = ResourceDepleted;
+
+        if(handler != null){
+            if(healthpoints <= 0){
+                handler(this, EventArgs.Empty);
+            }
+        }
+    }
+
+    private void SetLayerMask(String mask){
+        gameObject.layer = LayerMask.NameToLayer(mask);
     }
 }
