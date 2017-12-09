@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class WatchTower : BuildingBaseBehaviour {
 
+	public void Start(){
+			SetHealthAndMax(10);
+	}
+
+	public void Update(){
+		if (healthpoints <= 0) {
+			OnDeath ();
+		}
+	}
+
 	public void OnCollisionEnter(Collision collision){
 		foreach (ContactPoint contact in collision.contacts)
 		{
