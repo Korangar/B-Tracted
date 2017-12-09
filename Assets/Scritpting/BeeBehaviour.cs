@@ -41,7 +41,7 @@ public class BeeBehaviour : MonoBehaviour
 
     private IEnumerator WaitForArrival(BuildingBaseBehaviour building){
         agent.SetDestination(building.transform.position);
-        while(Vector3.Distance(building.transform.position, transform.position) < arrival_proximity){
+        while(Vector3.Distance(building.transform.position, transform.position) > arrival_proximity){
             yield return null;
         }
         building.Arrive(this);
@@ -49,7 +49,7 @@ public class BeeBehaviour : MonoBehaviour
 
     private IEnumerator Attack(BuildingBaseBehaviour building){
         building.TakeDamage(DMG);
-        while(Vector3.Distance(building.transform.position, transform.position) < arrival_proximity_attack){
+        while(Vector3.Distance(building.transform.position, transform.position) > arrival_proximity_attack){
             yield return null;
         }
         //TODO Stuff for attack

@@ -2,7 +2,7 @@
 using UnityEngine;
 using System;
 
-public class GatheringBuildingBehaviour : RequestingBaseBuildingBehaviour {
+public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
     
     private ResourceBehaviour[] resources;
     private BeeBehaviour[] bees;
@@ -11,8 +11,6 @@ public class GatheringBuildingBehaviour : RequestingBaseBuildingBehaviour {
 
     void Start(){
         SetHealthAndMax(10);
-        SetNumberOfBees(5);
-        SetRequestDelay(2f);
         FindResources(scanRadius);
     }
 
