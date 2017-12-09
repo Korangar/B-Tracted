@@ -56,7 +56,7 @@ public class PlayerMenuManager : MonoBehaviour {
 		return true;
 	}
 
-	private void Show(params string[] labels){
+	public void Show(params string[] labels){
 		selectrange_max = Mathf.Min(labels.Length, entries.Length);
 		foreach(var e in entries){
 			e.enabled = false;

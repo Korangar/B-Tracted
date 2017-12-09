@@ -67,6 +67,7 @@ public class PlayerBehaviour : MonoBehaviour {
 				if(menuOpen){
 					playerMenu.StopAllCoroutines();
 					menuOpen = false;
+					playerMenu.Show();
 				}
 				
 			}
