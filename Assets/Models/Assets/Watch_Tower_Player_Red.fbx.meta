@@ -6,10 +6,26 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: Camera.001
+    100006: Hive_Tower_Player_Red
+    100008: Lamp
+    100010: Lamp.001
     400000: //RootNode
+    400002: Camera
+    400004: Camera.001
+    400006: Hive_Tower_Player_Red
+    400008: Lamp
+    400010: Lamp.001
+    2000000: Camera
+    2000002: Camera.001
     2300000: //RootNode
+    2300002: Hive_Tower_Player_Red
     3300000: //RootNode
+    3300002: Hive_Tower_Player_Red
     4300000: Hive_Tower_Player_Red
+    10800000: Lamp
+    10800002: Lamp.001
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -19,8 +35,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Red.003
+    second: {fileID: 2100000, guid: bee8d8b849dacb041af691b85ff5d819, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Yellow
     second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.010
+    second: {fileID: 2100000, guid: 6cf788ab783f86b418bb03faf1755c8c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
