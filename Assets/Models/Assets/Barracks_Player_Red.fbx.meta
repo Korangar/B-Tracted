@@ -13,7 +13,9 @@ ModelImporter:
     400006: Lamp
     2000000: Camera
     2300000: Barracks_Player_Red
+    2300002: //RootNode
     3300000: Barracks_Player_Red
+    3300002: //RootNode
     4300000: Barracks_Player_Red
     9500000: //RootNode
     10800000: Lamp
@@ -28,6 +30,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Yellow.001
     second: {fileID: 2100000, guid: bcb1b52fe9263db449f3c766a81b5cba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.003
+    second: {fileID: 2100000, guid: 6efb7ba7573d51940b21b0e9315f9dd0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -18,7 +18,9 @@ ModelImporter:
     2000000: Camera
     2000002: Camera.001
     2300000: Watch_Tower_Player_Blue
+    2300002: //RootNode
     3300000: Watch_Tower_Player_Blue
+    3300002: //RootNode
     4300000: Watch_Tower_Player_Blue
     9500000: //RootNode
     10800000: Lamp
@@ -32,8 +34,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Blue.004
+    second: {fileID: 2100000, guid: c78eae8fdf0c54d9c8a02df9b42536fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Yellow.009
     second: {fileID: 2100000, guid: d2f6d0801f6e84341acf8db858d3556c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.010
+    second: {fileID: 2100000, guid: d82f27ad00b306543a52a45aad9627d7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -63,7 +75,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 40
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

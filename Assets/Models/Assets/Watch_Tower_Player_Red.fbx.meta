@@ -9,21 +9,31 @@ ModelImporter:
     100006: Lamp
     100008: Lamp.001
     100010: //RootNode
+    100012: Watch_Tower_Player_Blue
     400000: Camera
     400002: Camera.001
     400004: Hive_Tower_Player_Red
     400006: Lamp
     400008: Lamp.001
     400010: //RootNode
+    400012: Watch_Tower_Player_Blue
     2000000: Camera
     2000002: Camera.001
     2300000: Hive_Tower_Player_Red
+    2300002: Watch_Tower_Player_Blue
     3300000: Hive_Tower_Player_Red
+    3300002: Watch_Tower_Player_Blue
     4300000: Hive_Tower_Player_Red
+    4300002: Watch_Tower_Player_Blue
     9500000: //RootNode
     10800000: Lamp
     10800002: Lamp.001
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue.004
+    second: {fileID: 2100000, guid: c78eae8fdf0c54d9c8a02df9b42536fa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -34,6 +44,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Yellow.010
     second: {fileID: 2100000, guid: d82f27ad00b306543a52a45aad9627d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.011
+    second: {fileID: 2100000, guid: 6ec1702f40e914d5eaabe89533143805, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

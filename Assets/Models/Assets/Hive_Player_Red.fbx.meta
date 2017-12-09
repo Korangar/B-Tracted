@@ -18,7 +18,9 @@ ModelImporter:
     2000000: Camera
     2000002: Camera.001
     2300000: Hive_Player_Red
+    2300002: //RootNode
     3300000: Hive_Player_Red
+    3300002: //RootNode
     4300000: Hive_Player_Red
     9500000: //RootNode
     10800000: Lamp
@@ -34,6 +36,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Yellow.008
     second: {fileID: 2100000, guid: d25f0658b5085ff46b3ebe995becb158, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow.009
+    second: {fileID: 2100000, guid: d2f6d0801f6e84341acf8db858d3556c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

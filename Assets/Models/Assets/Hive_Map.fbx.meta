@@ -18,7 +18,9 @@ ModelImporter:
     2000000: Camera
     2000002: Camera.001
     2300000: Hive_Map
+    2300002: //RootNode
     3300000: Hive_Map
+    3300002: //RootNode
     4300000: Hive_Map
     9500000: //RootNode
     10800000: Lamp
