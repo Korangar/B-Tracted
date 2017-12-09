@@ -35,6 +35,6 @@ public class BuildingBaseBehaviour : MonoBehaviour {
         Destroy(gameObject);
     }
 
-
+    public virtual void Arrive(BeeBehaviour bee){}
 
 }

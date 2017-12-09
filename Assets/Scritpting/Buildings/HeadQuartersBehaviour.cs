@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainStash : BuildingBaseBehaviour {
+public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 	 
 	public GameObject unit;
 	public List<GameObject> currentUnits = new List<GameObject>();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WatchTower : BuildingBaseBehaviour {
+public class WatchTowerBehaviour : BuildingBaseBehaviour {
 
 	public List<GameObject> unitsWithinRange = new List<GameObject>(); 
 	public float attackRate = 0.5f; //attacks per second
