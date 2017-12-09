@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9846fa9b5e9244189b576c7d47d17034
-timeCreated: 1512811907
+guid: 59100c09f8baa4a5089f64adaa210bcd
+timeCreated: 1512823344
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,18 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Hive_Player_Red
+    4300000: Torus.002
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Red
-    second: {fileID: 2100000, guid: b3fec23f23ad84ab38f55aaadfc5f529, type: 2}
+      name: Blue
+    second: {fileID: 2100000, guid: c0c59aa9f02ec4bd1a570c98e5cf7f31, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Yellow
-    second: {fileID: 2100000, guid: f2a7db3488ca34c61a366991e439b0db, type: 2}
+    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

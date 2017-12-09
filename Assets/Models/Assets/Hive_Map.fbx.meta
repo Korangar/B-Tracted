@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 19b3e63fcbc5d4734a1d1d4fed4b2a24
-timeCreated: 1512811907
+guid: 17c5f31f8dd4c4edd8c3c4fd855f5b91
+timeCreated: 1512823343
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,23 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Rose
+    4300000: Hive_Map
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Green
-    second: {fileID: 2100000, guid: 1dcec6148303340c8afd40455cc02ca4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LightRed
-    second: {fileID: 2100000, guid: 4ec98e6e00920424389dca9b3908f3de, type: 2}
+      name: Ground
+    second: {fileID: 2100000, guid: 8a5952a5278fd488ab3b6bf84ecb7a4e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Yellow
-    second: {fileID: 2100000, guid: f2a7db3488ca34c61a366991e439b0db, type: 2}
+    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -55,7 +50,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

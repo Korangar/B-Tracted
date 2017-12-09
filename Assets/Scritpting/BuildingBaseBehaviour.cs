@@ -15,6 +15,10 @@ public class BuildingBaseBehaviour : MonoBehaviour
     public int healthpoints = 0;
     public int maxHealthpoints = 1000;
 
+    public void SetOwner(PlayerBehaviour owner){
+        this.owner = owner;
+    }
+
     public void TakeDamage()
     {
         healthpoints--;

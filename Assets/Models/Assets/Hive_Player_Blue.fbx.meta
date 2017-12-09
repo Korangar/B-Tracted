@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a6a0c470a56cc493c8ecbc218f69d743
-timeCreated: 1512811907
+guid: d686c35224f5d4cd2bcbca10bbf90d3b
+timeCreated: 1512823344
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,12 +15,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Blue
-    second: {fileID: 2100000, guid: defcb5c2c2add473a8b07f545ac6c899, type: 2}
+    second: {fileID: 2100000, guid: c0c59aa9f02ec4bd1a570c98e5cf7f31, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Yellow
-    second: {fileID: 2100000, guid: f2a7db3488ca34c61a366991e439b0db, type: 2}
+    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
