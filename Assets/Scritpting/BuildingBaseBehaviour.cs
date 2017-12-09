@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 
 
-
-
-
 public class BuildingBaseBehaviour : MonoBehaviour {
 
     public PlayerBehaviour owner;
