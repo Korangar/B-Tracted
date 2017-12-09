@@ -22,7 +22,7 @@ public class RequestingBaseBuildingBehaviour : BuildingBaseBehaviour
         }
     }
 
-    public Bee RequestBee()
+    public BeeBehaviour RequestBee()
     {
         /*
          * Request bee and return refererence
