@@ -54,7 +54,7 @@ public class BarracksBehaviour : RequestingBaseBuildingBehaviour
         }
     }
 
-    public void TrainBee(Bee bee)
+    public void TrainBee(BeeBehaviour bee)
     {
         /**
          * 
@@ -68,7 +68,7 @@ public class BarracksBehaviour : RequestingBaseBuildingBehaviour
         targetTile = tile;
     }
 
-    public bool containsNotTrained(List<Bee> list){
+    public bool containsNotTrained(List<BeeBehaviour> list){
 
         for (int i = 0; i < list.Count; i++){
             if( false

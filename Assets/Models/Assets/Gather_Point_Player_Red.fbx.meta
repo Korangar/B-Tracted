@@ -1,45 +1,34 @@
 fileFormatVersion: 2
 guid: d0f15f9db565e4882b81f0ad0829a502
-timeCreated: 1512823344
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Camera
-    100002: //RootNode
-    100004: Lamp
-    100006: Torus.002
-    100008: Camera.001
-    100010: Lamp.001
+    100002: Camera.001
+    100004: //RootNode
+    100006: Lamp
+    100008: Lamp.001
+    100010: Torus.002
     400000: Camera
-    400002: //RootNode
-    400004: Lamp
-    400006: Torus.002
-    400008: Camera.001
-    400010: Lamp.001
+    400002: Camera.001
+    400004: //RootNode
+    400006: Lamp
+    400008: Lamp.001
+    400010: Torus.002
     2000000: Camera
     2000002: Camera.001
     2300000: Torus.002
     3300000: Torus.002
     4300000: Torus.002
+    9500000: //RootNode
     10800000: Lamp
     10800002: Lamp.001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Red
-    second: {fileID: 2100000, guid: 48a02389bcd1a4b219447f01347c1cd5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Red.001
     second: {fileID: 2100000, guid: e1494e6fb5ac9fd449539c5c45ef351e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Yellow
-    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -116,7 +105,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

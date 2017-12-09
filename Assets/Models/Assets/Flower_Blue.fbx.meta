@@ -1,24 +1,21 @@
 fileFormatVersion: 2
 guid: 05526e03e96084aaeaa6999ec6fda873
-timeCreated: 1512823343
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Camera
+    100000: Camera
+    100002: //RootNode
     100004: Flower_Blue
     100006: Lamp
-    400000: //RootNode
-    400002: Camera
+    400000: Camera
+    400002: //RootNode
     400004: Flower_Blue
     400006: Lamp
     2000000: Camera
-    2300000: //RootNode
-    2300002: Flower_Blue
-    3300000: //RootNode
-    3300002: Flower_Blue
+    2300000: Flower_Blue
+    3300000: Flower_Blue
     4300000: Flower_Blue
+    9500000: //RootNode
     10800000: Lamp
   externalObjects:
   - first:
@@ -31,11 +28,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: LightBlue
     second: {fileID: 2100000, guid: 01dfe4a6d3a584842b9d730a31adba15, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Yellow
-    second: {fileID: 2100000, guid: c679bc628d08549569c054436d12d598, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -112,7 +104,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
