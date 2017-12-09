@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class BuildingBaseBehaviour : MonoBehaviour {
-	public PlayerBehaviour owner;
-	public int healthpoints = 0;
+public class BuildingBaseBehaviour : MonoBehaviour
+{
+    public PlayerBehaviour owner;
+    public int healthpoints = 0;
     public int maxHealthpoints = 1000;
 
     public void TakeDamage()
@@ -15,12 +16,17 @@ public class BuildingBaseBehaviour : MonoBehaviour {
         healthpoints -= damageAmt;
     }
 
-    public void SetHealth(int health)
+    public void SetHealthAndMax(int health)
     {
         maxHealthpoints = healthpoints = health;
     }
 
+    public void SetMax(int max){
+        maxHealthpoints = max;
+    }
+
     public virtual void OnDeath(){
-        
+        StopAllCoroutines();
+        Destroy(gameObject);
     }
 }
