@@ -94,15 +94,12 @@ public class PlayerBehaviour : MonoBehaviour {
 				yield return null;
 				v_in = Input.GetAxis(myInput.vertical);
 				h_in = Input.GetAxis(myInput.horizontal);
-			}	
-			if(Mathf.Abs(v_in) >= Mathf.Abs(h_in))
-			{
-				transform.Translate(move_v*Mathf.Sign(v_in));
 			}
-			else
-			{
-				transform.Translate(move_h*Mathf.Sign(h_in));
-			}
-		}
+
+            Vector2 dir = new Vector2(h_in, -v_in);
+            dir *= Coordinate.size;
+
+            transform.Translate(Coordinate.Cube2Real(Coordinate.RoundReal2Cube(dir)));
+        }
 	} 
 }
