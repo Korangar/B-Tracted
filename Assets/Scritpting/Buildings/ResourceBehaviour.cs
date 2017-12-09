@@ -13,6 +13,6 @@ public class ResourceBehaviour : BuildingBaseBehaviour {
 
     public override void Arrive(BeeBehaviour bee){
         bee.hasPollen=this;
-        bee.GoTo(owner.headQuarters);
+        bee.GoTo(bee.owner.headQuarters);
     }
 }
