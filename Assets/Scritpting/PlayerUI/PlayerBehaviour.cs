@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
+	public BeeBehaviour beePrefab;
+
 	public static Vector3 move_v = new Vector3(0.8660254f, 0, 1.5f);
 	public static Vector3 move_h = new Vector3(1.732051f, 0, 0);
 	public static float moveDelay_s = 0.3f;
 	public static float deadzone = 0.9f;
+	public HeadQuartersBehaviour headQuarters;
 	public int resource = 100;
 	[HideInInspector]
 	public InputBatch myInput;
@@ -49,6 +52,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Start()
 	{
+		buildings.Add(headQuarters);
 		if(myInput == null){
 			myInput = GetComponent<InputBatch>();
 		}
@@ -72,10 +76,22 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	public void BuildOrder(BuildingBaseBehaviour b){
+		if(resource < b.cost){
+			return;
+			// TODO if not enough pollen
+		}
+		resource -= b.cost;
 		BuildingBaseBehaviour obj = 
 		Instantiate(b, selectedTile.transform.position, Quaternion.identity);
 		obj.SetOwner(this);
 		selectedTile.building = obj;
+	}
+
+	public BeeBehaviour RequestWorker(BuildingBaseBehaviour b){
+		BeeBehaviour bee = Instantiate(beePrefab, headQuarters.transform.position, Quaternion.identity);
+		bee.owner = this;
+		bee.GoTo(b);
+		return bee;
 	}
 
 	private IEnumerator SelectorMapControll()
