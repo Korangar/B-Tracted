@@ -48,7 +48,7 @@ public class PlayerMenuManager : MonoBehaviour {
 	public void OnMenuOpen(TileBehaviour tb){
 		if(tb.building==null){
 			//build menu
-			Show("Gatherer", "Barracks", "Watchtower");
+			Show("Gatherer(100)", "Barracks(250)", "Watchtower(150)");
 			actions = new System.Action[]{
 				() => playerBehaviour.BuildOrder(gatherer),
 				() => playerBehaviour.BuildOrder(barracks),

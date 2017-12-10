@@ -17,12 +17,12 @@ public class MainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetAxis("Accept_1") != 0){
+		if (Input.GetButtonDown("Start_1")){
 			playerOneReady = true;
 			playerOne.GetComponent<CanvasGroup>().alpha = 1;
 
 		}
-		if (Input.GetAxis("Accept_2") != 0){
+		if (Input.GetButtonDown("Start_2")){
 			playerTwoReady = true;
 			playerTwo.GetComponent<CanvasGroup> ().alpha = 1;
 		}

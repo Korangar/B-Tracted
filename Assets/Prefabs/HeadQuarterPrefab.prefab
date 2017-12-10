@@ -140,8 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   cost: 0
-  healthpoints: 10
-  maxHealthpoints: 10
+  maxHealthpoints: 500
 --- !u!208 &208827261414630584
 NavMeshObstacle:
   m_ObjectHideFlags: 1

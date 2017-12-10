@@ -50,8 +50,6 @@ public class WatchTowerBehaviour : BuildingBaseBehaviour
 
     private IEnumerator DrawShotEffect(BeeBehaviour target){
         LineRenderer line = GetComponent<LineRenderer>();
-        line.startColor = owner.color;
-        line.endColor = owner.color;
         line.SetPosition(0, transform.position+Vector3.up);
         line.SetPosition(1, target.transform.position);
         line.enabled = true;

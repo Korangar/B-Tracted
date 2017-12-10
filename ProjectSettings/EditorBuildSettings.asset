@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Adron.unity
     guid: 7b8bf2c620524a24ab57406ca27cf5d8
+  - enabled: 1
+    path: Assets/BlueVictoryScene.unity
+    guid: e96a161b2882e47e1bd42ba23b1c75ad
+  - enabled: 1
+    path: Assets/RedVictoryScene.unity
+    guid: e5a840d5b805a4b51bba74f454d3fc2a

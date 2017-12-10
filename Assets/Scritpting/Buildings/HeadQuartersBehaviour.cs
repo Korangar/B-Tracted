@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 	public void Start(){		
@@ -19,7 +20,12 @@ public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 
 	public void GameOver(BuildingBaseBehaviour building)
 	{
-		Debug.Log("Player " + building.owner.id + "won!!!");
+		if(building.owner.id == 0)
+		{
+			SceneManager.LoadScene("RedVictoryScene");
+		} else {
+			SceneManager.LoadScene("BlueVictoryScene");
+		}
 	}
 
 }
