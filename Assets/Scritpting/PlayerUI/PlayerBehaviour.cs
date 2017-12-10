@@ -131,7 +131,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			if(Physics.Raycast(transform.position, Vector3.down, out info, 1<<LayerMask.NameToLayer("Tiles")))
 			{
 				selectedTile = info.collider.GetComponent<TileBehaviour>();
-				Debug.DrawLine(selectedTile.transform.position, Vector3.up);
+				// Debug.DrawLine(selectedTile.transform.position, Vector3.up);
 			}
 			yield return new WaitForSeconds(moveDelay_s);
 			float v_in = 0f;

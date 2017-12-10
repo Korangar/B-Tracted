@@ -125,7 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347e55955b8ca19418d5d174f7bbc01b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  owner: {fileID: 0}
+  hp: 100
+  DMG: 5
+  hasPollen: {fileID: 0}
+  agent: {fileID: 195501262726806832}
 --- !u!136 &136296215814558326
 CapsuleCollider:
   m_ObjectHideFlags: 1

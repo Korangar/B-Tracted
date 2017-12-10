@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4634941721310856}
-  - component: {fileID: 114920383067896398}
+  - component: {fileID: 114011366716122480}
   m_Layer: 0
   m_Name: GathererPrefab
   m_TagString: Untagged
@@ -126,7 +126,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2488446, y: 2.099631, z: 0.35914773}
   m_Center: {x: 0.21339105, y: -0.8144516, z: -0.037926286}
---- !u!114 &114920383067896398
+--- !u!114 &114011366716122480
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,12 +134,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1177621704191022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a673d09ea111408497afe06939f0baf, type: 3}
+  m_Script: {fileID: 11500000, guid: 26ac4d4a79933944290de850aed5e553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  healthpoints: 10
+  cost: 0
+  healthpoints: 0
   maxHealthpoints: 10
-  nmbrOfBees: 5
-  requestDelay: 2
+  nmbrOfBees: 0
+  requestDelay: 0
   beeList: []

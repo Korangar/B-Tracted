@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4295292748807834}
-  - component: {fileID: 114693637124846290}
+  - component: {fileID: 114263995860897102}
   m_Layer: 0
   m_Name: BarracksPrefab
   m_TagString: Untagged
@@ -126,7 +126,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0334227, y: 0.4997394, z: 0.86259824}
   m_Center: {x: 0.32110202, y: -0.014505744, z: -0.28965148}
---- !u!114 &114693637124846290
+--- !u!114 &114263995860897102
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,10 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1903627676082188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cee760db38b544aeca95a17908267a71, type: 3}
+  m_Script: {fileID: 11500000, guid: c56b0ff6c2bde3a4d9d2ef51a4ca9013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  cost: 0
   healthpoints: 0
   maxHealthpoints: 10
   nmbrOfBees: 0

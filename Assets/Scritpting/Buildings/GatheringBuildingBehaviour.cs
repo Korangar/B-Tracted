@@ -32,6 +32,10 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
         {
             resources[i] = colliders[i].gameObject.GetComponent<ResourceBehaviour>();
             // Subscribe to ResourceDepleted Event
+        }
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
             if(bees[i]==null)
             {
                 HireBee(i);

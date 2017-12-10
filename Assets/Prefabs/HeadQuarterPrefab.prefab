@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4958495339983478}
-  - component: {fileID: 114316856352278862}
+  - component: {fileID: 114770451348166176}
   m_Layer: 0
-  m_Name: MainStashPrefab
+  m_Name: HeadQuarterPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.020294, y: 0.93745834, z: 1.1236174}
   m_Center: {x: 0.05750072, y: 0.42261395, z: -0.4201612}
---- !u!114 &114316856352278862
+--- !u!114 &114770451348166176
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,11 +134,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1434300401849998}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b2c95813e75f24ab48a6d8d5dab636, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ee923f0e60185b46978d627a7fc42f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  cost: 0
   healthpoints: 10
   maxHealthpoints: 10
-  unit: {fileID: 0}
-  currentUnits: []

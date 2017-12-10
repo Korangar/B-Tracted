@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4157660916290428}
-  - component: {fileID: 114863827823670264}
+  - component: {fileID: 114580179863135528}
+  - component: {fileID: 65414584763907030}
   m_Layer: 9
   m_Name: RedResourcePrefab
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1212537380176516}
   m_Mesh: {fileID: 4300000, guid: 2f681b1320d714072bc93583b38a2dd8, type: 3}
+--- !u!65 &65414584763907030
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196325523656986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65448898778835390
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -123,11 +136,11 @@ BoxCollider:
   m_GameObject: {fileID: 1212537380176516}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.0061224, y: 2.9295008, z: 0.7546226}
   m_Center: {x: -0.1618514, y: -0.031160593, z: -0.021413416}
---- !u!114 &114863827823670264
+--- !u!114 &114580179863135528
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -135,10 +148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196325523656986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4785c1189b4174a57922ad5a54af7e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a715d6bb22dc541897ba0941fe44ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  healthpoints: 10
+  cost: 0
+  healthpoints: 0
   maxHealthpoints: 10
   type: 0
