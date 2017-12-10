@@ -366,7 +366,15 @@ MonoBehaviour:
     type: 2}
   menu_bg: {fileID: 114581281040186816}
   menu_selector: {fileID: 114497936937151044}
+<<<<<<< HEAD
   menu_entries: []
+=======
+  menu_entries:
+  - {fileID: 114344668697901628}
+  - {fileID: 114318314676730046}
+  - {fileID: 114918614146753242}
+  - {fileID: 0}
+>>>>>>> Animator und UI
 --- !u!114 &114844973851841408
 MonoBehaviour:
   m_ObjectHideFlags: 1
