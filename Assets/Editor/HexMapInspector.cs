@@ -90,7 +90,7 @@ public class HexMapInspector : Editor
                             DestroyImmediate(tile.GetComponent<TileBehaviour>().building.gameObject);
                         }
                     }
-
+                    TileBehaviour tb = tile.GetComponent<TileBehaviour>();
                     tile.GetComponent<TileBehaviour>().building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
                     tile.GetComponent<TileBehaviour>().building.transform.position = tile.transform.position;
                     tile.GetComponent<TileBehaviour>().building.SetOwner(((HexMap)target).owner);

@@ -69,6 +69,7 @@ public class BeeBehaviour : MonoBehaviour
         }
         if(building){
             movement = null;
+            agent.ResetPath();
             building.Arrive(this);
         }
     }
@@ -83,6 +84,7 @@ public class BeeBehaviour : MonoBehaviour
         }
         else{
             movement = null;
+            transform.GetChild(0).GetComponent<Animator>().SetTrigger("onAttack");
             building.Healthpoints -= (DMG);
             UnitDeath();
         }
