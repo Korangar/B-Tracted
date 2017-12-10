@@ -23,7 +23,6 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
     private void FindResources(float radius){
         // Get all colliders on resource layer in vicinity
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius, 1<<LayerMask.NameToLayer("Resources"));
-        Debug.Log(colliders.Length);
         Debug.DrawRay(transform.position, Vector3.right*radius, Color.red, 20f);
         // Get gameobjects of colliderss 
         resources = new ResourceBehaviour[colliders.Length];

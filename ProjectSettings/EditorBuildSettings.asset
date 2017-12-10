@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/StartSecene.unity
+    guid: 35575f49471900a43b63dfce411ab80d
+  - enabled: 1
+    path: Assets/Scenes/Adron.unity
+    guid: 7b8bf2c620524a24ab57406ca27cf5d8
