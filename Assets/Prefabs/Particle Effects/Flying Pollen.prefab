@@ -34,13 +34,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242668189776956}
-  m_LocalRotation: {x: -0.656841, y: -0, z: -0, w: 0.75402915}
-  m_LocalPosition: {x: 15.4, y: 5.1, z: 57.5}
+  m_LocalRotation: {x: 0.6921433, y: -0, z: -0, w: -0.7217601}
+  m_LocalPosition: {x: 15.4, y: 26, z: 40.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -82.119, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 272.4, y: 0, z: 0}
 --- !u!198 &198009928427224752
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -101,7 +101,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 809266324
+  randomSeed: -1406914027
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -191,7 +191,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.91012406, g: 0.9558824, b: 0.12651385, a: 1}
+      maxColor: {r: 0.9496957, g: 1, b: 0.08823532, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -253,7 +253,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3373,7 +3373,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e335491af076e20449c018b4f3ad6a3e, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

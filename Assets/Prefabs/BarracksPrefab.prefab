@@ -139,12 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  cost: 0
-  healthpoints: 0
+  cost: 250
   maxHealthpoints: 10
-  nmbrOfBees: 0
-  requestDelay: 0
-  beeList: []
+  max_recruits: 5
 --- !u!208 &208520986235061894
 NavMeshObstacle:
   m_ObjectHideFlags: 1
