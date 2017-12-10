@@ -12,13 +12,6 @@ public class WatchTowerBehaviour : BuildingBaseBehaviour {
 			SetHealthAndMax(10);
 	}
 
-	public void Update(){
-		if (healthpoints <= 0) {
-			OnDeath ();
-			StopAllCoroutines ();
-		}
-	}
-
 	public void OnCollisionStay(Collision collision){
 		if (!unitsWithinRange.Contains (collision.gameObject)) {
 			unitsWithinRange.Add (collision.gameObject);

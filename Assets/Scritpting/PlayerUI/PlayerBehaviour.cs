@@ -21,8 +21,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	private bool menuOpen = false;
 	[HideInInspector]
 	public TileBehaviour selectedTile;
-	public List<BuildingBaseBehaviour> buildings = new List<BuildingBaseBehaviour>();
-
+	public List<BarracksBehaviour> barracks = new List<BarracksBehaviour>();
 
 	public TileBehaviour SelectedTile{
 		get{
@@ -39,8 +38,7 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 		set{
 			menuOpen = value;
-			if(menuOpen){
-				playerMenu.OnMenuOpen(selectedTile);
+			if(menuOpen && playerMenu.OnMenuOpen(selectedTile)){
 				StopCoroutine(mapMovement);
 			}
 			else{
@@ -52,7 +50,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void Start()
 	{
-		buildings.Add(headQuarters);
 		if(myInput == null){
 			myInput = GetComponent<InputBatch>();
 		}
@@ -64,19 +61,14 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	public void AttackOrder()
 	{
-		foreach(var e in buildings)
+		foreach(var e in barracks)
 		{
-			bool isbarr = true;
-			if(isbarr)
-			{
-				// TODO set target for attack
-				Debug.Log("Attack "+ selectedTile.name);
-			}
+			e.Attack(selectedTile.building);
 		}
 	}
 
 	public void BuildOrder(BuildingBaseBehaviour b){
-		if(resource < b.cost){
+		if(!b || resource < b.cost){
 			return;
 			// TODO if not enough pollen
 		}

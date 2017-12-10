@@ -4,80 +4,57 @@ using UnityEngine;
 using System.Linq;
 using System.Threading;
 
-public class BarracksBehaviour : RequestingBaseBuildingBehaviour
+public class BarracksBehaviour : BuildingBaseBehaviour
 {
-
-    TileBehaviour targetTile = null;
-
-    private static float trainDelay = 5f;
-
+    private static float restockDelay_s = 1.5f;
+    private static float trainDelay_s = 5f;
+    public int max_recruits = 5;
+    private List<BeeBehaviour> bees = new List<BeeBehaviour>();
 
     void Start()
     {
-        SetHealthAndMax(10);
-        SetNumberOfBees(5);
-        SetRequestDelay(2f);
-        StartCoroutine("RequestBees");
+        owner.barracks.Add(this);
+        OnDeath += (e) => owner.barracks.Remove(this);
+        StartCoroutine(Restock());
     }
 
-    void Update()
+    public void Attack(BuildingBaseBehaviour building)
     {
-        if (healthpoints <= 0)
-            OnDeath();
-        if (beeList.Count < 10)
-        {
-            StartCoroutine("RequestBees");
-        }
-        if(containsNotTrained(beeList))
-        {
-            StartCoroutine("TrainBees");
-        }
-    }
-
-    private IEnumerator TrainBees()
-    {
-        int i = 0;
-
-        while (i < beeList.Count)
-        {
-            if (i == 0 /*!beeList.ElementAt(i).isTrained()*/)
-            {
-                TrainBee(beeList.ElementAt(i));
-                i++;
-                yield return new WaitForSeconds(trainDelay);
-            }
-            else
-            {
-                i++;
-                continue;
+        foreach(var b in bees){
+            if(b.isWarrior){
+                b.GoTo(building);
             }
         }
     }
 
-    public void TrainBee(BeeBehaviour bee)
-    {
-        /**
-         * 
-         * Circling untrained bee is changed to trained state
-         * 
-        */
+    public override void Arrive(BeeBehaviour bee){
+        if(!bee.isWarrior){
+            StartCoroutine(Train(bee));
+        } 
     }
 
-    public void Attack(TileBehaviour tile)
-    {
-        targetTile = tile;
-    }
-
-    public bool containsNotTrained(List<BeeBehaviour> list){
-
-        for (int i = 0; i < list.Count; i++){
-            if( false
-               // !list.ElementAt(i).Trained
-            ){
-                return true;
+    private IEnumerator Restock(){
+        while(true){
+            while(bees.Count<max_recruits){
+                yield return new WaitForSeconds(restockDelay_s);
+                bees.Add(HireBee());
             }
+            yield return null;
         }
+    }
 
-        return false;
+    private IEnumerator Train(BeeBehaviour bee){
+        yield return new WaitForSeconds(trainDelay_s);
+        bee.isWarrior = this;
+    }
+
+    private BeeBehaviour HireBee(){
+        BeeBehaviour temp = owner.RequestWorker(this);
+        temp.OnDeath += OnDeathOfAWarrior;
+        return temp;
+    }
+
+    private void OnDeathOfAWarrior(BeeBehaviour bee){
+        bees.Remove(bee);
     }
 }

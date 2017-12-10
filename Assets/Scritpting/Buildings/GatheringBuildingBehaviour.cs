@@ -6,11 +6,9 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
     
     private ResourceBehaviour[] resources;
     private BeeBehaviour[] bees;
-   
     private static float scanRadius = 5f;
 
     void Start(){
-        SetHealthAndMax(10);
         FindResources(scanRadius);
     }
 

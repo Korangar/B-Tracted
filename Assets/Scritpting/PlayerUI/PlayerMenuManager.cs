@@ -38,7 +38,7 @@ public class PlayerMenuManager : MonoBehaviour {
 		select_y_offset = selector_obj.transform.localPosition.y;
 	}
 
-	public void OnMenuOpen(TileBehaviour tb){
+	public bool OnMenuOpen(TileBehaviour tb){
 		if(tb==null){
 			Debug.Log("No Tile!");
 		} 
@@ -51,20 +51,17 @@ public class PlayerMenuManager : MonoBehaviour {
 				() => playerBehaviour.BuildOrder(barracks),
 				() => playerBehaviour.BuildOrder(watchtower)
 			};
-			
+			return true;
 		}
-		else if(tb.building.owner == null){
-			//resources options
-		}
-		else if(tb.building.owner == playerBehaviour){
-			//my building
-			// --> do nothing
-		}
-		else{
+		else if(tb.building.owner != playerBehaviour){
 			//enemy building
-			// TODO Queue
+			Show("ANGRIFF!!!1");
+			actions = new System.Action[]{
+				() => playerBehaviour.AttackOrder()
+			};
+			return true;
 		}
-		
+		return false;
 	}
 
 	public void OnMenuClose(){

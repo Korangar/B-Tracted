@@ -4,22 +4,25 @@ public class BuildingBaseBehaviour : MonoBehaviour {
 
     public PlayerBehaviour owner;
     public int cost;
-    public int healthpoints = 0;
+    private int healthpoints = 0;
     public int maxHealthpoints = 10;
 	public static Vector3 location;
+    public event System.Action<BuildingBaseBehaviour> OnDeath;
+
+    public int Healthpoints{
+        get{
+            return healthpoints;
+        }
+        set{
+            healthpoints = Mathf.Min(maxHealthpoints, value);
+            if(healthpoints < 0){
+                Death();
+            }
+        }
+    }
 
 	public void SetOwner(PlayerBehaviour owner){
         this.owner = owner;
-    }
-
-    public void TakeDamage()
-    {
-        healthpoints--;
-    }
-
-    public void TakeDamage(int damageAmt)
-    {
-        healthpoints -= damageAmt;
     }
 
     public void SetHealthAndMax(int health)
@@ -31,8 +34,11 @@ public class BuildingBaseBehaviour : MonoBehaviour {
         maxHealthpoints = max;
     }
 
-    public virtual void OnDeath(){
+    public virtual void Death(){
         StopAllCoroutines();
+        if(OnDeath!=null){
+            OnDeath(this);
+        }
         Destroy(gameObject);
     }
 
