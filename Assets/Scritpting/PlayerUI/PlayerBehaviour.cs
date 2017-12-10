@@ -27,7 +27,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     public int id;
 
-	public TileBehaviour SelectedTile
+    private HexMap map;
+
+    public TileBehaviour SelectedTile
     {
         get
         {
@@ -67,6 +69,8 @@ public class PlayerBehaviour : MonoBehaviour
             playerMenu = GetComponentInChildren<PlayerMenuManager>();
         }
         StartCoroutine(SelectorMapControll());
+
+        map = FindObjectOfType<HexMap>();
     }
 
     public void AttackOrder()
@@ -143,9 +147,17 @@ public class PlayerBehaviour : MonoBehaviour
                 v_in = Input.GetAxis(myInput.vertical);
                 h_in = Input.GetAxis(myInput.horizontal);
             }
-            Vector2 dir = new Vector2(h_in, v_in);
+            Vector2 dir = new Vector2(h_in, -v_in);
             dir *= Coordinate.size;
-            transform.Translate(Coordinate.Cube2Real(Coordinate.RoundReal2Cube(dir)));
+
+            Vector2 offset = Coordinate.Cube2Offset(Coordinate.RoundReal2Cube(new Vector2(transform.position.x, transform.position.z)) + Coordinate.RoundReal2Cube(dir));
+
+            if (offset.x < 0) offset.x = 0;
+            if (offset.y < 0) offset.y = 0;
+            if (offset.x >= map.NumColumns) offset.x = map.NumColumns - 1;
+            if (offset.y >= map.NumRows) offset.x = map.NumRows - 1;
+
+            transform.position = Coordinate.Offset2Real(offset);
         }
     }
 }

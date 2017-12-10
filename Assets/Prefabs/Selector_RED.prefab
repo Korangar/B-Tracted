@@ -272,10 +272,7 @@ MonoBehaviour:
   selectedTile: {fileID: 0}
   barracks: []
   color: {r: 1, g: 0, b: 0, a: 0}
-<<<<<<< HEAD
   id: 0
-=======
->>>>>>> Animator und UI
 --- !u!114 &114329781915560114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,15 +323,7 @@ MonoBehaviour:
     type: 2}
   menu_bg: {fileID: 114016164598208718}
   menu_selector: {fileID: 114959110707500298}
-<<<<<<< HEAD
   menu_entries: []
-=======
-  menu_entries:
-  - {fileID: 114869135579049910}
-  - {fileID: 114036500634721334}
-  - {fileID: 114329781915560114}
-  - {fileID: 0}
->>>>>>> Animator und UI
 --- !u!114 &114427148486929900
 MonoBehaviour:
   m_ObjectHideFlags: 1
