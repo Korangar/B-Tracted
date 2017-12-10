@@ -22,7 +22,7 @@ public class WatchTowerBehaviour : BuildingBaseBehaviour
             while(!target)
             {
                 yield return new WaitForSeconds(0.2f);
-                Physics.SphereCast(transform.position, )
+                // Physics.SphereCast(transform.position, )
             }
             // got target - kill it
             while(target && Vector3.Distance(transform.position, target.transform.position) < 2.5f){

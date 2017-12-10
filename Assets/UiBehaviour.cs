@@ -38,18 +38,13 @@ public class UiBehaviour : MonoBehaviour {
                     playerTwoText = text;
                 }
             }
-            GameObject[] go = GetComponents<GameObject>();
-            foreach(GameObject g in go){
-                if(g.name == "tip2"){
-                    tipTwo = g;
-                }
-            }
+            tipTwo = transform.Find("tip2").gameObject;
 
             if (tipTwo != null)
             {
                 StartCoroutine(VanishTip());
             }
-            StopCoroutine(KeepMeUpdated());
+            StartCoroutine(KeepMeUpdated());
         }
         else{
             Debug.Log("UI has been corrupted because 1 or more players couldn't be found. " +
@@ -80,7 +75,7 @@ public class UiBehaviour : MonoBehaviour {
         if (tipTwo != null)
         {
             yield return new WaitForSeconds(10f);
-            Destroy(tipTwo);
+            DestroyImmediate(tipTwo);
         }
     }
 
