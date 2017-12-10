@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 290720521}
   - component: {fileID: 290720520}
   - component: {fileID: 290720519}
+  - component: {fileID: 290720523}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -348,6 +349,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &290720523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 290720518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19141147487ce34a96099e5b843efa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOne: {fileID: 1943077711}
+  playerTwo: {fileID: 1156245186}
 --- !u!1 &368350807
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,13 +701,14 @@ GameObject:
   - component: {fileID: 1156245185}
   - component: {fileID: 1156245187}
   - component: {fileID: 1156245186}
+  - component: {fileID: 1156245188}
   m_Layer: 5
   m_Name: PlayerTwoReady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1156245185
 RectTransform:
   m_ObjectHideFlags: 0
@@ -745,6 +760,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156245184}
+--- !u!225 &1156245188
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156245184}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1245254480
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,10 +938,10 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: Horizontal_1
+  m_VerticalAxis: Vertical_1
+  m_SubmitButton: Accept_1
+  m_CancelButton: Cancel_1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -1242,13 +1268,14 @@ GameObject:
   - component: {fileID: 1943077710}
   - component: {fileID: 1943077712}
   - component: {fileID: 1943077711}
+  - component: {fileID: 1943077713}
   m_Layer: 5
   m_Name: PlayerOneReady
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1943077710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1300,6 +1327,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1943077709}
+--- !u!225 &1943077713
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1943077709}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1977055906
 GameObject:
   m_ObjectHideFlags: 0
