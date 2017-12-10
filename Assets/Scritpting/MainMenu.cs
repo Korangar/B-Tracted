@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour {
 		}
 
 		if (playerOneReady && playerTwoReady) {
-			SceneManager.LoadScene("BTracted");
+			SceneManager.LoadScene("Scenes/Adron");
 		}
 	}
 }
