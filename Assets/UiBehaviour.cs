@@ -38,8 +38,17 @@ public class UiBehaviour : MonoBehaviour {
                     playerTwoText = text;
                 }
             }
-            tipTwo = GameObject.Find("tipTwo");
-            StartCoroutine(VanishTip());
+            GameObject[] go = GetComponents<GameObject>();
+            foreach(GameObject g in go){
+                if(g.name == "tip2"){
+                    tipTwo = g;
+                }
+            }
+
+            if (tipTwo != null)
+            {
+                StartCoroutine(VanishTip());
+            }
             StopCoroutine(KeepMeUpdated());
         }
         else{
