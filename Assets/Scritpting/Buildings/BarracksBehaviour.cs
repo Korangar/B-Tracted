@@ -18,6 +18,8 @@ public class BarracksBehaviour : RequestingBaseBuildingBehaviour
         SetNumberOfBees(5);
         SetRequestDelay(2f);
         StartCoroutine("RequestBees");
+
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
     }
 
     void Update()

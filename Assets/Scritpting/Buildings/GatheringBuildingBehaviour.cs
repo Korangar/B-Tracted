@@ -12,6 +12,8 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
     void Start(){
         SetHealthAndMax(10);
         FindResources(scanRadius);
+
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
     }
 
     private void HireBee(int i){

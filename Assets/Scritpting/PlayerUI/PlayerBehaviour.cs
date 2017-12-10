@@ -23,6 +23,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	public TileBehaviour selectedTile;
 	public List<BuildingBaseBehaviour> buildings = new List<BuildingBaseBehaviour>();
 
+	public Color color;
+
 
 	public TileBehaviour SelectedTile{
 		get{
