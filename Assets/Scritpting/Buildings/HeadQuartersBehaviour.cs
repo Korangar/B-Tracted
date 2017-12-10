@@ -5,6 +5,8 @@ using UnityEngine;
 public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 	public void Start(){
 		SetHealthAndMax(50);
+		
+		transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
 	}
 
 	public override void Arrive(BeeBehaviour bee){

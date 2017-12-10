@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114242093516768822}
   - component: {fileID: 114427148486929900}
   m_Layer: 0
-  m_Name: Selector
+  m_Name: Selector_RED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,14 +277,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1015682808834738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b58e9067a00f14d89913ee93c3b3cc, type: 3}
+  m_Script: {fileID: 11500000, guid: b817e91c55733634a976527f4919c97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beePrefab: {fileID: 114327832302042252, guid: 1e735721e31a4634cba1ec8356ebc13c,
+    type: 2}
+  headQuarters: {fileID: 0}
   resource: 100
   myInput: {fileID: 114427148486929900}
   playerMenu: {fileID: 114385489159334042}
   selectedTile: {fileID: 0}
   buildings: []
+  color: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &114318474012359222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,9 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b1fe336cefaa419b3d263c99b497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherer: {fileID: 114920383067896398, guid: 22f41ee09fec14953b228b1dbcf0cfbf, type: 2}
-  barracks: {fileID: 114693637124846290, guid: f842383d1747047e08629aec7f8c969a, type: 2}
-  watchtower: {fileID: 114981055052712960, guid: f0ee9ca01c86a4ebea787b92806c827d,
+  gatherer: {fileID: 114011366716122480, guid: 22f41ee09fec14953b228b1dbcf0cfbf, type: 2}
+  barracks: {fileID: 114263995860897102, guid: f842383d1747047e08629aec7f8c969a, type: 2}
+  watchtower: {fileID: 114098420894228798, guid: f0ee9ca01c86a4ebea787b92806c827d,
     type: 2}
   selector_obj: {fileID: 1402032025875046}
   entries:
@@ -504,7 +508,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d1a4f51bd93748644a0f3b5549012965, type: 3}
-  m_Color: {r: 1, g: 0.007352948, b: 0.007352948, a: 0.416}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.416}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

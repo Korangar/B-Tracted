@@ -13,9 +13,19 @@ public class BarracksBehaviour : BuildingBaseBehaviour
 
     void Start()
     {
+<<<<<<< HEAD
         owner.barracks.Add(this);
         OnDeath += (e) => owner.barracks.Remove(this);
         StartCoroutine(Restock());
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
+=======
+        SetHealthAndMax(10);
+        SetNumberOfBees(5);
+        SetRequestDelay(2f);
+        StartCoroutine("RequestBees");
+
+        
+>>>>>>> aff83656d4e7bb9c0505b34585aa8f560df3fda2
     }
 
     public void Attack(BuildingBaseBehaviour building)

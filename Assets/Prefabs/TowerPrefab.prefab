@@ -19,7 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4694743993924784}
-  - component: {fileID: 114981055052712960}
+  - component: {fileID: 114098420894228798}
+  - component: {fileID: 208004961041087076}
   m_Layer: 0
   m_Name: TowerPrefab
   m_TagString: Untagged
@@ -126,7 +127,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6575263, z: 0.93931717}
   m_Center: {x: 0, y: 0.5643877, z: -0.3616139}
---- !u!114 &114981055052712960
+--- !u!114 &114098420894228798
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -134,11 +135,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095370837606108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 576020f9e0fd2904ebb81bb47f113101, type: 3}
+  m_Script: {fileID: 11500000, guid: ebbfe9bb08b72054db7d6afb08f52e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  healthpoints: 10
+  cost: 0
+  healthpoints: 0
   maxHealthpoints: 10
   unitsWithinRange: []
   attackRate: 0.5
+--- !u!208 &208004961041087076
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095370837606108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 4cd28e6246197cc4f9452731ae9663c0
+timeCreated: 1512868672
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Antenna_Base_L
+    100002: Antenna_Base_R
+    100004: Antenna_Middle_L
+    100006: Antenna_Middle_R
+    100008: Antenna_Tip_L
+    100010: Antenna_Tip_R
+    100012: Back_Leg_Base_L
+    100014: Back_Leg_Base_R
+    100016: Back_Leg_Middle_L
+    100018: Back_Leg_Middle_R
+    100020: Back_Leg_Tip_L
+    100022: Back_Leg_Tip_R
+    100024: //RootNode
+    100026: Front_Leg_Base_L
+    100028: Front_Leg_Base_R
+    100030: Front_Leg_Middle_L
+    100032: Front_Leg_Middle_R
+    100034: Front_Leg_Tip_L
+    100036: Front_Leg_Tip_R
+    100038: Head
+    100040: Helmet1
+    100042: Middle_Leg_Base_L
+    100044: Middle_Leg_Base_R
+    100046: Middle_Leg_Middle_L
+    100048: Middle_Leg_Middle_R
+    100050: Middle_Leg_Tip_L
+    100052: Middle_Leg_Tip_R
+    100054: Stinger
+    100056: Stinger_Tip
+    100058: Thorax
+    100060: Wing_Base_L
+    100062: Wing_Base_R
+    100064: Wing_Tip_L
+    100066: Wing_Tip_R
+    100068: Worker_Bee
+    400000: Antenna_Base_L
+    400002: Antenna_Base_R
+    400004: Antenna_Middle_L
+    400006: Antenna_Middle_R
+    400008: Antenna_Tip_L
+    400010: Antenna_Tip_R
+    400012: Back_Leg_Base_L
+    400014: Back_Leg_Base_R
+    400016: Back_Leg_Middle_L
+    400018: Back_Leg_Middle_R
+    400020: Back_Leg_Tip_L
+    400022: Back_Leg_Tip_R
+    400024: //RootNode
+    400026: Front_Leg_Base_L
+    400028: Front_Leg_Base_R
+    400030: Front_Leg_Middle_L
+    400032: Front_Leg_Middle_R
+    400034: Front_Leg_Tip_L
+    400036: Front_Leg_Tip_R
+    400038: Head
+    400040: Helmet1
+    400042: Middle_Leg_Base_L
+    400044: Middle_Leg_Base_R
+    400046: Middle_Leg_Middle_L
+    400048: Middle_Leg_Middle_R
+    400050: Middle_Leg_Tip_L
+    400052: Middle_Leg_Tip_R
+    400054: Stinger
+    400056: Stinger_Tip
+    400058: Thorax
+    400060: Wing_Base_L
+    400062: Wing_Base_R
+    400064: Wing_Tip_L
+    400066: Wing_Tip_R
+    400068: Worker_Bee
+    4300000: Helmet1
+    4300002: Worker_Bee
+    9500000: //RootNode
+    13700000: Helmet1
+    13700002: Worker_Bee
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Helmet
+    second: {fileID: 2100000, guid: 2af9556f15e02864f83aab0f01661b54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Worker_Bee1
+    second: {fileID: 2100000, guid: d133823c12f32254c9b0cf0a56123b8f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 15
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

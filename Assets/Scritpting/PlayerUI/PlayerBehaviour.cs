@@ -21,7 +21,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	private bool menuOpen = false;
 	[HideInInspector]
 	public TileBehaviour selectedTile;
-	public List<BarracksBehaviour> barracks = new List<BarracksBehaviour>();
+	public List<BuildingBaseBehaviour> barracks = new List<BuildingBaseBehaviour>();
+	public Color color;
 
 	public TileBehaviour SelectedTile{
 		get{
@@ -123,7 +124,7 @@ public class PlayerBehaviour : MonoBehaviour {
 			if(Physics.Raycast(transform.position, Vector3.down, out info, 1<<LayerMask.NameToLayer("Tiles")))
 			{
 				selectedTile = info.collider.GetComponent<TileBehaviour>();
-				Debug.DrawLine(selectedTile.transform.position, Vector3.up);
+				// Debug.DrawLine(selectedTile.transform.position, Vector3.up);
 			}
 			yield return new WaitForSeconds(moveDelay_s);
 			float v_in = 0f;

@@ -10,6 +10,8 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
 
     void Start(){
         FindResources(scanRadius);
+
+        transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
     }
 
     private void HireBee(int i){
@@ -30,6 +32,10 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
         {
             resources[i] = colliders[i].gameObject.GetComponent<ResourceBehaviour>();
             // Subscribe to ResourceDepleted Event
+        }
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
             if(bees[i]==null)
             {
                 HireBee(i);
