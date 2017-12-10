@@ -11,8 +11,21 @@ public class UiBehaviour : MonoBehaviour {
 
     private Text playerOneText;
     private Text playerTwoText;
+    private GameObject tipTwo;
 
     void Start(){
+        PlayerBehaviour[] players = FindObjectsOfType<PlayerBehaviour>();
+        foreach(PlayerBehaviour p in players){
+            if(p.id == 0)
+            {
+                playerOne = playerOne == null ? p : playerOne;
+            }
+            else if(p.id == 1)
+            {
+                playerTwo = playerTwo == null ? p : playerTwo;
+            }
+        }
+
         if (playerOne != null && playerTwo != null)
         {
             Text[] texts = gameObject.GetComponentsInChildren<Text>();
@@ -25,7 +38,19 @@ public class UiBehaviour : MonoBehaviour {
                     playerTwoText = text;
                 }
             }
+            tipTwo = transform.Find("tip2").gameObject;
+
+            if (tipTwo != null)
+            {
+                StartCoroutine(VanishTip());
+            }
+            StartCoroutine(KeepMeUpdated());
         }
+        else{
+            Debug.Log("UI has been corrupted because 1 or more players couldn't be found. " +
+                      "Make sure all id are set in PlayerBehaviours.");
+        }
+
     }
 
     public void updateStats(PlayerBehaviour player){
@@ -37,4 +62,21 @@ public class UiBehaviour : MonoBehaviour {
             playerTwoText.text = player.resource + "";
         }
     }
+
+    IEnumerator KeepMeUpdated(){
+        while(true){
+            updateStats(playerOne);
+            updateStats(playerTwo);
+            yield return new WaitForSeconds(0.25f);
+        }
+    }
+
+    IEnumerator VanishTip(){
+        if (tipTwo != null)
+        {
+            yield return new WaitForSeconds(10f);
+            DestroyImmediate(tipTwo);
+        }
+    }
+
 }

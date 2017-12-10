@@ -91,9 +91,9 @@ public class HexMapInspector : Editor
                         }
                     }
                     TileBehaviour tb = tile.GetComponent<TileBehaviour>();
-                    tile.GetComponent<TileBehaviour>().building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
-                    tile.GetComponent<TileBehaviour>().building.transform.position = tile.transform.position;
-                    tile.GetComponent<TileBehaviour>().building.SetOwner(((HexMap)target).owner);
+                    tb.building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
+                    tb.building.transform.position = tile.transform.position;
+                    tb.building.SetOwner(((HexMap)target).owner);
                 }
 
             }
