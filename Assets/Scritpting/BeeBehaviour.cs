@@ -9,7 +9,20 @@ public class BeeBehaviour : MonoBehaviour
     public int hp = 100;
     public int DMG = 5;
     public ResourceBehaviour hasPollen = null;
-    public BarracksBehaviour isWarrior = null;
+
+    private BarracksBehaviour iswarrior;
+    public BarracksBehaviour isWarrior { 
+        get {
+            return iswarrior;
+        }
+        set {
+            iswarrior = value;
+
+            BeeModelManager BMM = GetComponent<BeeModelManager>();
+            if(BMM)
+                BMM.SetWarrior(value != null);
+            } 
+    }
     private float arrival_proximity = 0.75f;
     private float arrival_proximity_attack = 0.75f;
     public NavMeshAgent agent;
@@ -28,6 +41,14 @@ public class BeeBehaviour : MonoBehaviour
         }
     }
 
+    public void SetOwner(PlayerBehaviour owner)
+    {
+        this.owner = owner;
+        BeeModelManager BMM = GetComponent<BeeModelManager>();
+
+        if(BMM)
+            BMM.SetModel(owner.id);
+    }
 	public void GoTo(BuildingBaseBehaviour building)
 	{
         if(movement!=null) StopCoroutine(movement);
