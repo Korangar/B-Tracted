@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4634941721310856}
   - component: {fileID: 114011366716122480}
+  - component: {fileID: 208008921453843090}
   m_Layer: 0
   m_Name: GathererPrefab
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   cost: 0
   healthpoints: 0
   maxHealthpoints: 10
-  nmbrOfBees: 0
-  requestDelay: 0
-  beeList: []
+--- !u!208 &208008921453843090
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177621704191022}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

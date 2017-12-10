@@ -40,7 +40,12 @@ public class HexMapInspector : Editor
                 if (e.button == 1)
                 {
                     if (tile != null)
+                    {
+                        if (tile.GetComponent<TileBehaviour>().building != null)
+                            DestroyImmediate(tile.GetComponent<TileBehaviour>().building.gameObject);
+
                         DestroyImmediate(tile.gameObject);
+                    }
                 }
 
                 else if (e.button == 0)
@@ -60,8 +65,10 @@ public class HexMapInspector : Editor
                             DestroyImmediate(tile.GetComponent<TileBehaviour>().building.gameObject);
                         }
                     }
-                    if (((HexMap)target).building != null) {
-                        tile.GetComponent<TileBehaviour>().building = Instantiate(((HexMap)target).building, tile.transform.position, Quaternion.identity).GetComponent<BuildingBaseBehaviour>();
+                    if (((HexMap)target).building != null)
+                    {
+                        tile.GetComponent<TileBehaviour>().building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
+                        tile.GetComponent<TileBehaviour>().building.transform.position = tile.transform.position;
                         tile.GetComponent<TileBehaviour>().building.SetOwner(((HexMap)target).owner);
                     }
                 }

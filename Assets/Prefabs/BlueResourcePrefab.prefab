@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4410481856549582}
   - component: {fileID: 114334630630699092}
   - component: {fileID: 65219534379089958}
+  - component: {fileID: 208397528809318190}
   m_Layer: 9
   m_Name: BlueResourcePrefab
   m_TagString: Untagged
@@ -155,3 +156,18 @@ MonoBehaviour:
   healthpoints: 0
   maxHealthpoints: 10
   type: 1
+--- !u!208 &208397528809318190
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166069471862090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

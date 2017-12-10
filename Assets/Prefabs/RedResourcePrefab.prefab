@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4157660916290428}
   - component: {fileID: 114580179863135528}
   - component: {fileID: 65414584763907030}
+  - component: {fileID: 208941509700033684}
   m_Layer: 9
   m_Name: RedResourcePrefab
   m_TagString: Untagged
@@ -156,3 +157,18 @@ MonoBehaviour:
   healthpoints: 0
   maxHealthpoints: 10
   type: 0
+--- !u!208 &208941509700033684
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1196325523656986}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
