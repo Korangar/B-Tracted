@@ -21,7 +21,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	private bool menuOpen = false;
 	[HideInInspector]
 	public TileBehaviour selectedTile;
-	public List<BuildingBaseBehaviour> barracks = new List<BuildingBaseBehaviour>();
+	public List<BarracksBehaviour> barracks = new List<BarracksBehaviour>();
 	public Color color;
 
 	public TileBehaviour SelectedTile{

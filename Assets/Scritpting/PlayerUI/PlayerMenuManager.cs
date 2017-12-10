@@ -8,9 +8,11 @@ public class PlayerMenuManager : MonoBehaviour {
 
 	private PlayerBehaviour playerBehaviour;
 	public BuildingBaseBehaviour gatherer, barracks, watchtower;
-	public GameObject selector_obj;
+	
+	public Image menu_bg;
+	public Image menu_selector;
 	[HideInInspector]
-	public Text[] entries;
+	public Text[] menu_entries;
 	[HideInInspector]
 	public System.Action[] actions;
 	private float select_y_offset;
@@ -24,9 +26,9 @@ public class PlayerMenuManager : MonoBehaviour {
 		}
 		set{
 			selector = value;
-			Vector3 pos = selector_obj.transform.localPosition;
+			Vector3 pos = menu_selector.transform.localPosition;
 			pos.y = select_y_offset-value;
-			selector_obj.transform.localPosition = pos;
+			menu_selector.transform.localPosition = pos;
 		}
 	}
 
@@ -34,8 +36,8 @@ public class PlayerMenuManager : MonoBehaviour {
 	void Start()
 	{
 		playerBehaviour = GetComponentInParent<PlayerBehaviour>();
-		entries = GetComponentsInChildren<Text>();
-		select_y_offset = selector_obj.transform.localPosition.y;
+		menu_entries = GetComponentsInChildren<Text>();
+		select_y_offset = menu_selector.transform.localPosition.y;
 	}
 
 	public bool OnMenuOpen(TileBehaviour tb){
@@ -74,15 +76,16 @@ public class PlayerMenuManager : MonoBehaviour {
 
 	private void Show(params string[] labels){
 		Selector = 0;
-		selectrange_max = Mathf.Min(labels.Length, entries.Length);
-		foreach(var e in entries){
+		selectrange_max = Mathf.Min(labels.Length, menu_entries.Length);
+		foreach(var e in menu_entries){
 			e.enabled = false;
 		}
 		for(int i = 0; i< selectrange_max; i++){
-			entries[i].enabled = true;
-			entries[i].text = labels[i];
+			menu_entries[i].enabled = true;
+			menu_entries[i].text = labels[i];
 		}
-		if(selectrange_max>0){
+		menu_bg.enabled = (menu_selector.enabled = selectrange_max>0);
+		if(menu_selector.enabled){
 			StartCoroutine("MenuSelectionMovement");
 		}
 		else{
