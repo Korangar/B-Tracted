@@ -40,11 +40,12 @@ public class PlayerMenuManager : MonoBehaviour {
 		select_y_offset = menu_selector.transform.localPosition.y;
 	}
 
-	public bool OnMenuOpen(TileBehaviour tb){
-		if(tb==null){
-			Debug.Log("No Tile!");
-		} 
-			
+	public bool CanMenuOpen(TileBehaviour tb){
+		return 	tb.building==null||
+				tb.building.owner && tb.building.owner != playerBehaviour; 
+	}
+
+	public void OnMenuOpen(TileBehaviour tb){
 		if(tb.building==null){
 			//build menu
 			Show("Gatherer", "Barracks", "Watchtower");
@@ -53,7 +54,6 @@ public class PlayerMenuManager : MonoBehaviour {
 				() => playerBehaviour.BuildOrder(barracks),
 				() => playerBehaviour.BuildOrder(watchtower)
 			};
-			return true;
 		}
 		else if(tb.building.owner != playerBehaviour){
 			//enemy building
@@ -61,9 +61,7 @@ public class PlayerMenuManager : MonoBehaviour {
 			actions = new System.Action[]{
 				() => playerBehaviour.AttackOrder()
 			};
-			return true;
 		}
-		return false;
 	}
 
 	public void OnMenuClose(){
@@ -80,13 +78,14 @@ public class PlayerMenuManager : MonoBehaviour {
 		foreach(var e in menu_entries){
 			e.enabled = false;
 		}
-		for(int i = 0; i< selectrange_max; i++){
+		for(int i = 0; i < selectrange_max; i++){
 			menu_entries[i].enabled = true;
 			menu_entries[i].text = labels[i];
 		}
-		menu_bg.enabled = (menu_selector.enabled = selectrange_max>0);
-		if(menu_selector.enabled){
-			StartCoroutine("MenuSelectionMovement");
+		menu_bg.enabled = 		selectrange_max > 0;
+		menu_selector.enabled = selectrange_max > 0;
+		if(selectrange_max>0){
+			StartCoroutine(MenuSelectionMovement());
 		}
 		else{
 			StopAllCoroutines();

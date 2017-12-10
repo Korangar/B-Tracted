@@ -39,8 +39,9 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 		set{
 			menuOpen = value;
-			if(menuOpen && playerMenu.OnMenuOpen(selectedTile)){
+			if(menuOpen){
 				StopCoroutine(mapMovement);
+				playerMenu.OnMenuOpen(selectedTile);
 			}
 			else{
 				playerMenu.OnMenuClose();
@@ -100,17 +101,14 @@ public class PlayerBehaviour : MonoBehaviour {
 					playerMenu.OnSelect();
 					MenuOpen = false;
 				}
-				else
+				else if(playerMenu.CanMenuOpen(selectedTile))
 				{
 					MenuOpen = true;
 				}
 			}
 			else if(Input.GetButtonDown(myInput.cancel))
 			{
-				if(menuOpen)
-				{
-					MenuOpen = false;
-				}
+				if(menuOpen) MenuOpen = false;
 			}
 			yield return null;
 		}
