@@ -17,18 +17,18 @@ public class MainMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Start_1")){
+		if (Input.GetAxis("Accept_1") != 0){
 			playerOneReady = true;
-			playerOne.enabled = true;
+			playerOne.GetComponent<CanvasGroup>().alpha = 1;
 
 		}
-		if (Input.GetButtonDown("Start_2")){
+		if (Input.GetAxis("Accept_2") != 0){
 			playerTwoReady = true;
-			playerOne.enabled = true;
+			playerTwo.GetComponent<CanvasGroup> ().alpha = 1;
 		}
 
 		if (playerOneReady && playerTwoReady) {
-			SceneManager.LoadScene("BTracted");
+			SceneManager.LoadScene("Scenes/Adron");
 		}
 	}
 }

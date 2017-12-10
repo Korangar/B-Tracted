@@ -30,8 +30,7 @@ public class HexMapInspector : Editor
 		{
 			for (int j = 0; j < ((HexMap)target).NumRows; j++) 
 			{
-                GameObject hex =(GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).hexagon);
-                hex.transform.position =  Coordinate.Offset2Real(new Vector2(i, j));
+                GameObject hex = (GameObject)Instantiate(((HexMap)target).hexagon, Coordinate.Offset2Real(new Vector2(i, j)), Quaternion.identity);
 			//	hexesGO [hexagonScript].GetComponentInChildren<Hex> ().Hexagon = hexagonScript;
 				hex.name = i + "_" + j;
 			// Parent hexGO to Map
@@ -76,8 +75,7 @@ public class HexMapInspector : Editor
                 {
                     if (tile == null)
                     {
-                        tile = (GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).hexagon);
-                        tile.transform.position =  Coordinate.Offset2Real(offcoords);
+                        tile = (GameObject)Instantiate(((HexMap)target).hexagon, Coordinate.Offset2Real(offcoords), Quaternion.identity);
                         //	hexesGO [hexagonScript].GetComponentInChildren<Hex> ().Hexagon = hexagonScript;
                         tile.name = offcoords.x + "_" + offcoords.y;
                         // Parent hexGO to Map
@@ -91,9 +89,13 @@ public class HexMapInspector : Editor
                         }
                     }
                     TileBehaviour tb = tile.GetComponent<TileBehaviour>();
-                    tb.building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
-                    tb.building.transform.position = tile.transform.position;
-                    tb.building.SetOwner(((HexMap)target).owner);
+
+                    if (((HexMap)target).building != null)
+                    {
+                        tb.building = ((GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).building)).GetComponent<BuildingBaseBehaviour>();
+                        tb.building.transform.position = tile.transform.position;
+                        tb.building.SetOwner(((HexMap)target).owner);
+                    }
                 }
 
             }
