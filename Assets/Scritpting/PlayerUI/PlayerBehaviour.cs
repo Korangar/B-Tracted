@@ -94,6 +94,7 @@ public class PlayerBehaviour : MonoBehaviour
         BuildingBaseBehaviour obj = Instantiate(b, selectedTile.transform.position, Quaternion.identity);
         obj.SetOwner(this);
         selectedTile.building = obj;
+
     }
 
     public BeeBehaviour RequestWorker(BuildingBaseBehaviour b)
