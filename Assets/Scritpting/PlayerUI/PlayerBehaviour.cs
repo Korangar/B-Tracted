@@ -71,6 +71,8 @@ public class PlayerBehaviour : MonoBehaviour
         StartCoroutine(SelectorMapControll());
 
         map = FindObjectOfType<HexMap>();
+
+        transform.position = Coordinate.Offset2Real(new Vector2(map.NumColumns /2, map.NumRows /2));
     }
 
     public void AttackOrder()

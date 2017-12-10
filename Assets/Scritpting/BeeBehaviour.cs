@@ -84,7 +84,8 @@ public class BeeBehaviour : MonoBehaviour
         }
         else{
             movement = null;
-            transform.GetChild(0).GetComponent<Animator>().SetTrigger("onAttack");
+            // transform.GetChild(0).GetComponent<Animator>().SetTrigger("onAttack");
+            // yield return new WaitForSeconds(0.2f);
             building.Healthpoints -= (DMG);
             UnitDeath();
         }
