@@ -3,36 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerBehaviour : MonoBehaviour {
+public class PlayerBehaviour : MonoBehaviour
+{
 
-	public BeeBehaviour beePrefab;
+    public BeeBehaviour beePrefab;
 
-	public static Vector3 move_v = new Vector3(0.8660254f, 0, 1.5f);
-	public static Vector3 move_h = new Vector3(1.732051f, 0, 0);
-	public static float moveDelay_s = 0.3f;
-	public static float deadzone = 0.9f;
-	public HeadQuartersBehaviour headQuarters;
-	public int resource = 100;
-	[HideInInspector]
-	public InputBatch myInput;
-	[HideInInspector]
-	public PlayerMenuManager playerMenu;
-	private Coroutine mapMovement;
-	private bool menuOpen = false;
-	[HideInInspector]
-	public TileBehaviour selectedTile;
-	public List<BarracksBehaviour> barracks = new List<BarracksBehaviour>();
-	public Color color;
+    public static Vector3 move_v = new Vector3(0.8660254f, 0, 1.5f);
+    public static Vector3 move_h = new Vector3(1.732051f, 0, 0);
+    public static float moveDelay_s = 0.3f;
+    public static float deadzone = 0.9f;
+    public HeadQuartersBehaviour headQuarters;
+    public int resource = 100;
+    [HideInInspector]
+    public InputBatch myInput;
+    [HideInInspector]
+    public PlayerMenuManager playerMenu;
+    private Coroutine mapMovement;
+    private bool menuOpen = false;
+    [HideInInspector]
+    public TileBehaviour selectedTile;
+    public List<BarracksBehaviour> barracks = new List<BarracksBehaviour>();
+    public Color color;
 
-	public TileBehaviour SelectedTile{
-		get{
-			return selectedTile;
-		}
-		set{
-			selectedTile = value;
-		}
-	}
+    public int id;
 
+	public TileBehaviour SelectedTile
+    {
+        get
+        {
+            return selectedTile;
+        }
+        set
+        {
+            selectedTile = value;
+        }
+    }
+	
 	public bool MenuOpen{
 		get{
 			return menuOpen;
@@ -50,47 +56,51 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
-	void Start()
-	{
-		if(myInput == null){
-			myInput = GetComponent<InputBatch>();
-		}
-		if(playerMenu == null){
-			playerMenu = GetComponentInChildren<PlayerMenuManager>();
-		}
-		StartCoroutine(SelectorMapControll());
-	}
+    void Start()
+    {
+        if (myInput == null)
+        {
+            myInput = GetComponent<InputBatch>();
+        }
+        if (playerMenu == null)
+        {
+            playerMenu = GetComponentInChildren<PlayerMenuManager>();
+        }
+        StartCoroutine(SelectorMapControll());
+    }
 
-	public void AttackOrder()
-	{
-		foreach(var e in barracks)
-		{
-			e.Attack(selectedTile.building);
-		}
-	}
+    public void AttackOrder()
+    {
+        foreach (var e in barracks)
+        {
+            e.Attack(selectedTile.building);
+        }
+    }
 
-	public void BuildOrder(BuildingBaseBehaviour b){
-		if(!b || resource < b.cost){
-			return;
-			// TODO if not enough pollen
-		}
-		resource -= b.cost;
-		BuildingBaseBehaviour obj = 
-		Instantiate(b, selectedTile.transform.position, Quaternion.identity);
-		obj.SetOwner(this);
-		selectedTile.building = obj;
-	}
+    public void BuildOrder(BuildingBaseBehaviour b)
+    {
+        if (!b || resource < b.cost)
+        {
+            return;
+            // TODO if not enough pollen
+        }
+        resource -= b.cost;
+        BuildingBaseBehaviour obj = Instantiate(b, selectedTile.transform.position, Quaternion.identity);
+        obj.SetOwner(this);
+        selectedTile.building = obj;
+    }
 
-	public BeeBehaviour RequestWorker(BuildingBaseBehaviour b){
-		BeeBehaviour bee = Instantiate(beePrefab, headQuarters.transform.position, Quaternion.identity);
-		bee.owner = this;
-		bee.GoTo(b);
-		return bee;
-	}
+    public BeeBehaviour RequestWorker(BuildingBaseBehaviour b)
+    {
+        BeeBehaviour bee = Instantiate(beePrefab, headQuarters.transform.position, Quaternion.identity);
+        bee.SetOwner(this);
+        bee.GoTo(b);
+        return bee;
+    }
 
-	private IEnumerator SelectorMapControll()
-	{
-		mapMovement = StartCoroutine(SelectorMovement());
+    private IEnumerator SelectorMapControll()
+    {
+        mapMovement = StartCoroutine(SelectorMovement());
 
 		while(true)
 		{
@@ -114,28 +124,28 @@ public class PlayerBehaviour : MonoBehaviour {
 		}
 	}
 
-	private IEnumerator SelectorMovement()
-	{
-		while(true)
-		{
-			RaycastHit info;
-			if(Physics.Raycast(transform.position, Vector3.down, out info, 1<<LayerMask.NameToLayer("Tiles")))
-			{
-				selectedTile = info.collider.GetComponent<TileBehaviour>();
-				// Debug.DrawLine(selectedTile.transform.position, Vector3.up);
-			}
-			yield return new WaitForSeconds(moveDelay_s);
-			float v_in = 0f;
-			float h_in = 0f;
-			while(Mathf.Abs(v_in) < deadzone && Mathf.Abs(h_in) < deadzone) 
-			{
-				yield return null;
-				v_in = Input.GetAxis(myInput.vertical);
-				h_in = Input.GetAxis(myInput.horizontal);
-			}
+    private IEnumerator SelectorMovement()
+    {
+        while (true)
+        {
+            RaycastHit info;
+            if (Physics.Raycast(transform.position, Vector3.down, out info, 1 << LayerMask.NameToLayer("Tiles")))
+            {
+                selectedTile = info.collider.GetComponent<TileBehaviour>();
+                // Debug.DrawLine(selectedTile.transform.position, Vector3.up);
+            }
+            yield return new WaitForSeconds(moveDelay_s);
+            float v_in = 0f;
+            float h_in = 0f;
+            while (Mathf.Abs(v_in) < deadzone && Mathf.Abs(h_in) < deadzone)
+            {
+                yield return null;
+                v_in = Input.GetAxis(myInput.vertical);
+                h_in = Input.GetAxis(myInput.horizontal);
+            }
             Vector2 dir = new Vector2(h_in, v_in);
             dir *= Coordinate.size;
             transform.Translate(Coordinate.Cube2Real(Coordinate.RoundReal2Cube(dir)));
         }
-	} 
+    }
 }
