@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class WatchTowerBehaviour : BuildingBaseBehaviour
 {
+    public int dmg = 7;
     public float attackRate = 0.5f; //attacks per second
-    public float attackRadius = 4f;
+    public float attackRadius = 5f;
     private bool AttackRunning = false;
-
-    private BeeBehaviour target;
 
     public void Start()
     {
@@ -16,19 +15,36 @@ public class WatchTowerBehaviour : BuildingBaseBehaviour
         transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
     }
 
-    IEnumerator AttackUnits()
-    {
-        while(true){
-            while(!target)
-            {
-                yield return new WaitForSeconds(0.2f);
-                Physics.SphereCast(transform.position, )
+    private BeeBehaviour GetNextEnemy(){
+        Collider[] colliders = Physics.OverlapSphere(transform.position, attackRadius, 1<<LayerMask.NameToLayer("Units"));
+        foreach(Collider c in colliders){
+            BeeBehaviour bee = c.GetComponent<BeeBehaviour>();
+            if(bee.owner != owner){
+                return bee;
             }
-            // got target - kill it
-            while(target && Vector3.Distance(transform.position, target.transform.position) < 2.5f){
-                yield return new WaitForSeconds(1 / attackRate);
-                // attack
+        }
+        return null;
+    }
+
+    public IEnumerator AttackUnits(){
+        BeeBehaviour target= null;
+        while(true){
+            while(!target){
+                target = GetNextEnemy();
+                yield return new WaitForSeconds(0.1f);
+            }
+            while(target){
+                if(Vector3.Distance(transform.position, target.transform.position)>attackRadius){
+                    target = null;
+                    break;
+                }
+                else{
+                    target.HP -= dmg;
+                    Debug.DrawLine(transform.position + Vector3.up * 1.0f, target.transform.GetChild(0).position, Color.black, 0.5f);
+                    yield return new WaitForSeconds(1/attackRate);
+                }
             }
         }
     }
+
 }

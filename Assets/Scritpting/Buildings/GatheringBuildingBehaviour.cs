@@ -16,6 +16,7 @@ public class GatheringBuildingBehaviour : BuildingBaseBehaviour {
 
     private void HireBee(int i){
         BeeBehaviour temp = owner.RequestWorker(resources[i]);
+        bees[i] = temp;
         temp.OnDeath += OnWorkerDeath;
     }
 

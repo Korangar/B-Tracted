@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeadQuartersBehaviour : BuildingBaseBehaviour {
-	public void Start(){
-		SetHealthAndMax(50);
-		
+	public void Start(){		
 		transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
 	}
 

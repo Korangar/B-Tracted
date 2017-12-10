@@ -6,7 +6,7 @@ using UnityEngine;
 public class BeeBehaviour : MonoBehaviour
 {
     public PlayerBehaviour owner;
-    public int hp = 100;
+    private int hp = 20;
     public int DMG = 5;
     public ResourceBehaviour hasPollen = null;
 
@@ -29,7 +29,7 @@ public class BeeBehaviour : MonoBehaviour
     public event System.Action<BeeBehaviour> OnDeath;
     private Coroutine movement;
 
-    private int HP{
+    public int HP{
         get{
             return hp;
         }
