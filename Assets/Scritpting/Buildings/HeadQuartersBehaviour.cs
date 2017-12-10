@@ -5,6 +5,8 @@ using UnityEngine;
 public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 	public void Start(){		
 		transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
+
+		OnDeath += GameOver;
 	}
 
 	public override void Arrive(BeeBehaviour bee){
@@ -13,6 +15,11 @@ public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 			bee.GoTo(bee.hasPollen);
 			bee.hasPollen = null;
 		}
+	}
+
+	public void GameOver(BuildingBaseBehaviour building)
+	{
+		Debug.Log("Player " + building.owner.id + "won!!!");
 	}
 
 }
