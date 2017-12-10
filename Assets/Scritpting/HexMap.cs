@@ -15,29 +15,6 @@ public class HexMap : MonoBehaviour {
 	public int NumColumns = 20;
 	public int NumRows = 15;
 
-	public void GenerateMap()
-	{	
-		TileBehaviour[] tiles = transform.GetComponentsInChildren<TileBehaviour>();
-		for(int i = 1; i < tiles.Length; i++){
-			if(tiles[i].building != null)
-				DestroyImmediate(tiles[i].building.gameObject);
-
-			DestroyImmediate(tiles[i].gameObject);
-		}
-
-		for (int i = 0; i < NumColumns; i++) 
-		{
-			for (int j = 0; j < NumRows; j++) 
-			{
-                GameObject hex = (GameObject)Instantiate (hexagon, Coordinate.Offset2Real(new Vector2(i, j)), Quaternion.identity);
-			//	hexesGO [hexagonScript].GetComponentInChildren<Hex> ().Hexagon = hexagonScript;
-				hex.name = i + "_" + j;
-			// Parent hexGO to Map
-				hex.transform.SetParent (this.transform);
-			}
-		}
-	}
-
 	private void OnDrawGizmos() {
 		Gizmos.color = Color.black;
 		

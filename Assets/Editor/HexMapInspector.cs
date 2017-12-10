@@ -12,9 +12,33 @@ public class HexMapInspector : Editor
         if (GUILayout.Button("Make!"))
         {
             HexMap t = (HexMap)target;
-            t.GenerateMap();
+            GenerateMap();
         }
     }
+
+    public void GenerateMap()
+	{	
+		TileBehaviour[] tiles = ((HexMap)target).transform.GetComponentsInChildren<TileBehaviour>();
+		for(int i = 1; i < tiles.Length; i++){
+			if(tiles[i].building != null)
+				DestroyImmediate(tiles[i].building.gameObject);
+
+			DestroyImmediate(tiles[i].gameObject);
+		}
+
+		for (int i = 0; i < ((HexMap)target).NumColumns; i++) 
+		{
+			for (int j = 0; j < ((HexMap)target).NumRows; j++) 
+			{
+                GameObject hex =(GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).hexagon);
+                hex.transform.position =  Coordinate.Offset2Real(new Vector2(i, j));
+			//	hexesGO [hexagonScript].GetComponentInChildren<Hex> ().Hexagon = hexagonScript;
+				hex.name = i + "_" + j;
+			// Parent hexGO to Map
+				hex.transform.SetParent (((HexMap)target).transform);
+			}
+		}
+	}
 
     void OnSceneGUI()
     {
@@ -52,7 +76,8 @@ public class HexMapInspector : Editor
                 {
                     if (tile == null)
                     {
-                        tile = (GameObject)Instantiate(((HexMap)target).hexagon, Coordinate.Offset2Real(offcoords), Quaternion.identity);
+                        tile = (GameObject)PrefabUtility.InstantiatePrefab(((HexMap)target).hexagon);
+                        tile.transform.position =  Coordinate.Offset2Real(offcoords);
                         //	hexesGO [hexagonScript].GetComponentInChildren<Hex> ().Hexagon = hexagonScript;
                         tile.name = offcoords.x + "_" + offcoords.y;
                         // Parent hexGO to Map
