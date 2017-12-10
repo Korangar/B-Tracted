@@ -2129,7 +2129,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 94330465}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3838,6 +3838,8 @@ MonoBehaviour:
   playerMenu: {fileID: 0}
   selectedTile: {fileID: 0}
   barracks: []
+  color: {r: 0, g: 0, b: 0, a: 0}
+  id: 0
 --- !u!4 &202787680
 Transform:
   m_ObjectHideFlags: 0
@@ -16863,7 +16865,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 929749286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c56b0ff6c2bde3a4d9d2ef51a4ca9013, type: 3}
   m_Name: 
@@ -26938,7 +26940,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1615091725}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -26952,7 +26954,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1449902399}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -29333,84 +29335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
---- !u!1 &1563761831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1493015495960542, guid: 2d063c191e8aef54caa5357fe25868ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1563761832}
-  - component: {fileID: 1563761834}
-  - component: {fileID: 1563761833}
-  m_Layer: 5
-  m_Name: Entry 4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1563761832
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 224200480246833472, guid: 2d063c191e8aef54caa5357fe25868ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563761831}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1615091725}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -3}
-  m_SizeDelta: {x: 0, y: 1}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1563761833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114318474012359222, guid: 2d063c191e8aef54caa5357fe25868ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563761831}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Option 4
---- !u!222 &1563761834
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 222687543294509142, guid: 2d063c191e8aef54caa5357fe25868ab,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563761831}
 --- !u!1 &1565580265
 GameObject:
   m_ObjectHideFlags: 0
@@ -30488,7 +30412,6 @@ RectTransform:
   - {fileID: 1882891494}
   - {fileID: 2018570474}
   - {fileID: 762906855}
-  - {fileID: 1563761832}
   - {fileID: 1449902400}
   m_Father: {fileID: 2033551652}
   m_RootOrder: 1
@@ -30510,15 +30433,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b1fe336cefaa419b3d263c99b497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherer: {fileID: 114653158585646392, guid: 35b20338f4e65ef4d88972926d9930f5, type: 2}
-  barracks: {fileID: 0}
+  gatherer: {fileID: 114011366716122480, guid: 22f41ee09fec14953b228b1dbcf0cfbf, type: 2}
+  barracks: {fileID: 114263995860897102, guid: f842383d1747047e08629aec7f8c969a, type: 2}
   watchtower: {fileID: 0}
-  selector_obj: {fileID: 1449902399}
-  entries:
-  - {fileID: 1882891495}
-  - {fileID: 2018570475}
-  - {fileID: 762906856}
-  - {fileID: 1563761833}
+  menu_bg: {fileID: 94330467}
+  menu_selector: {fileID: 1449902401}
+  menu_entries: []
 --- !u!114 &1615091727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34788,20 +34708,17 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1832830332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790b1fe336cefaa419b3d263c99b497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatherer: {fileID: 114653158585646392, guid: 35b20338f4e65ef4d88972926d9930f5, type: 2}
+  gatherer: {fileID: 0}
   barracks: {fileID: 0}
   watchtower: {fileID: 0}
-  selector_obj: {fileID: 1718906800}
-  entries:
-  - {fileID: 311880147}
-  - {fileID: 1465517415}
-  - {fileID: 1772681136}
-  - {fileID: 1391490642}
+  menu_bg: {fileID: 0}
+  menu_selector: {fileID: 0}
+  menu_entries: []
 --- !u!114 &1832830335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38476,6 +38393,8 @@ MonoBehaviour:
   playerMenu: {fileID: 0}
   selectedTile: {fileID: 0}
   barracks: []
+  color: {r: 0, g: 0, b: 0, a: 0}
+  id: 0
 --- !u!114 &2033551651
 MonoBehaviour:
   m_ObjectHideFlags: 0

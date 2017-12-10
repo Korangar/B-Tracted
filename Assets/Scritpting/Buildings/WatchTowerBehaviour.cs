@@ -4,40 +4,31 @@ using UnityEngine;
 
 public class WatchTowerBehaviour : BuildingBaseBehaviour
 {
-
-    public List<GameObject> unitsWithinRange = new List<GameObject>();
     public float attackRate = 0.5f; //attacks per second
+    public float attackRadius = 4f;
     private bool AttackRunning = false;
+
+    private BeeBehaviour target;
 
     public void Start()
     {
-        SetHealthAndMax(10);
+        StartCoroutine(AttackUnits());
         transform.GetChild(0).GetComponent<MeshRenderer>().material.color = owner.color;
-    }
-
-    public void OnCollisionStay(Collision collision)
-    {
-        if (!unitsWithinRange.Contains(collision.gameObject))
-        {
-            unitsWithinRange.Add(collision.gameObject);
-            if (!AttackRunning)
-            {
-                StartCoroutine("AttackUnits");
-            }
-        }
     }
 
     IEnumerator AttackUnits()
     {
-        AttackRunning = true;
-        while (unitsWithinRange.Count > 0)
-        {
-            //			unitsWithinRange [0].GetComponentInChildren<unitBehaviour> ().decHP ();   //Decrease Unit's HP
-            unitsWithinRange.RemoveAt(0);
-            yield return new WaitForSeconds(1 / attackRate);
+        while(true){
+            while(!target)
+            {
+                yield return new WaitForSeconds(0.2f);
+                Physics.SphereCast(transform.position, )
+            }
+            // got target - kill it
+            while(target && Vector3.Distance(transform.position, target.transform.position) < 2.5f){
+                yield return new WaitForSeconds(1 / attackRate);
+                // attack
+            }
         }
-        AttackRunning = false;
     }
-
-
 }
