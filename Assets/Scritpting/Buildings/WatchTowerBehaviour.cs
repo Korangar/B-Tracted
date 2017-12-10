@@ -41,10 +41,22 @@ public class WatchTowerBehaviour : BuildingBaseBehaviour
                 else{
                     target.HP -= dmg;
                     Debug.DrawLine(transform.position + Vector3.up * 1.0f, target.transform.GetChild(0).position, Color.black, 0.5f);
+                    StartCoroutine(DrawShotEffect(target));
                     yield return new WaitForSeconds(1/attackRate);
                 }
             }
         }
+    }
+
+    private IEnumerator DrawShotEffect(BeeBehaviour target){
+        LineRenderer line = GetComponent<LineRenderer>();
+        line.startColor = owner.color;
+        line.endColor = owner.color;
+        line.SetPosition(0, transform.position+Vector3.up);
+        line.SetPosition(1, target.transform.position);
+        line.enabled = true;
+        yield return new WaitForSeconds(0.4f);
+        line.enabled = false;
     }
 
 }
