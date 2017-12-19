@@ -20,7 +20,7 @@ public class HeadQuartersBehaviour : BuildingBaseBehaviour {
 
 	public void GameOver(BuildingBaseBehaviour building)
 	{
-		if(building.owner.id == 0)
+		if(building.owner.id != 0)
 		{
 			SceneManager.LoadScene("RedVictoryScene");
 		} else {
